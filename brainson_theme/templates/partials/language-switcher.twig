@@ -1,0 +1,12 @@
+{% if lang_switcher.active %}
+	<nav id="languageSwitcher">
+		{% for lang in lang_switcher.languages %}
+			{% if lang.active == 1 %}
+				{% set classes = 'active font-bold' %}
+			{% else %}
+				{% set classes = '' %}
+			{% endif %}
+			<a href="{{ lang.url }}" class="uppercase {{ classes }}">{{ lang.language_code }}</a>
+		{% endfor %}
+	</nav>
+{% endif %}

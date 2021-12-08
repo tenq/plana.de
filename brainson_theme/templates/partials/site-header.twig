@@ -1,0 +1,152 @@
+{# Logo Above menu: Uncomment if logo should be place _above_ the navbar #}
+{#
+<div class="o-container">
+    <div class="flex py-6">
+        <a
+            href="{{ site.link }}"
+            title="Zur Startseite"
+            class="flex items-start justify-start"
+        >
+            <svg
+                class="w-auto h-8 text-gray-800 fill-current"
+            >
+                <use xlink:href="{{site.theme.path}}/assets/dist/svg/sprite.svg#icon-site-logo"></use>
+            </svg>
+        </a>
+    </div>
+</div>
+#}
+
+<div
+    class="sticky top-0 z-50 w-full py-2 transition duration-200 ease-in-out bg-white c-site-header md:py-4"
+    :class="{'c-site-header--has-scrolled shadow-lg' : hasScrolled }"
+    x-data="{
+        hasScrolled: true,
+        reactOnScroll() {
+            if (this.$el.getBoundingClientRect().top < 120 && window.scrollY > 120) {
+                this.hasScrolled = true;
+            } else {
+                this.hasScrolled = false;
+            }
+        }
+    }"
+    x-init="reactOnScroll()"
+    @scroll.window="reactOnScroll()"
+>
+    <div class="o-container">
+        <div
+            x-data="{
+                open: false,
+                hasScrolled: true,
+                reactOnScroll() {
+                    if (this.$el.getBoundingClientRect().top < 200 && window.scrollY > 200) {
+                        this.hasScrolled = true;
+                    } else {
+                        this.hasScrolled = false;
+                    }
+                }
+            }"
+            class="flex flex-col mx-auto md:items-center md:justify-between md:flex-row"
+
+            x-init="reactOnScroll()"
+            @scroll.window="reactOnScroll()"
+        >
+            <div class="flex justify-between">
+                <a
+                    href="{{ site.link }}"
+                    title="Zur Startseite"
+                    class=""
+                >
+                    <svg
+                        class="flex text-gray-800 w-36 md:w-52 max-h-14" 
+                    >
+                        <use xlink:href="{{site.theme.path}}/assets/dist/svg/sprite.svg#icon-site-logo"></use>
+                    </svg>
+                </a>
+                <button
+                    class="text-black md:hidden"
+                    @click="open = !open"
+                >
+                    <span class="sr-only">{{__('Hauptmenü öffnen', 'brainson_theme')}}</span>
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="c-icon">
+                        <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        <path x-cloak x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav>
+                <ul
+                    aria-label="Hauptmenü"
+                    :class="{'flex': open, 'hidden': !open}"
+                    class="flex-col flex-grow hidden mt-4 -mx-4 md:mt-0 md:flex md:justify-end md:flex-row md:mx-0"
+                >
+                    {% for item in menus.header.items %}
+                        {% if item.children %}
+                            <li
+                                @click.away="open = false"
+                                class="relative c-main-submenu"
+                                x-data="{ open: false }"
+                            >
+                                <a
+                                    href="#c-dropdown--{{ loop.index }}"
+                                    @click.prevent="open = !open"
+                                    class="{{ item.classes|join(' ') }}  c-main-menu__link md:whitespace-no-wrap flex flex-row items-center w-full px-4 py-3 text-sm text-left text-black uppercase transition-colors duration-150 ease-in border-t border-transparent rounded-none md:w-auto hover:text-black focus:text-black"
+                                    :class="{'bg-white shadow-md hover:bg-white border-gray-100': open, 'hover:bg-gray-200': !open}"
+                                >
+                                    <span>{{ item.title }}</span>
+                                    <svg
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                        :class="{'rotate-180': open, 'rotate-0': !open}"
+                                        class="inline-block ml-auto transition-transform duration-200 transform rotate-0 c-icon md:hidden"
+                                    >
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+
+                                <div
+                                    x-show="open"
+                                    x-transition:enter="transition ease-out duration-100"
+                                    x-transition:enter-start="transform opacity-0 scale-95"
+                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-75"
+                                    x-transition:leave-start="transform opacity-100 scale-100"
+                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    class="{{ loop.last ? 'right-0' : 'left-0'}} z-30 w-full transition-all duration-150 ease-in-out origin-top-left shadow-md c-dropdown md:absolute md:w-48"
+                                    x-ref="dropdown"
+                                    x-cloak
+                                    id="c-dropdown--{{ loop.index }}"
+                                >
+                                    <ul class="bg-white">
+                                        {% for child in item.children %}
+                                            {{ loop.first ? '' : '<hr class="mx-4 border-gray-300">'}}
+                                            <li>
+                                                <a
+                                                    class="c-main-submenu__link block px-4 py-3 text-sm text-gray-800 hover:bg-gray-200 hover:text-black focus:bg-gray-200 focus:text-black  {{ child.classes|join(' ') }}"
+                                                    href="{{child.link}}"
+                                                    {% if child.target %}target="{{child.target}}"{% endif %}
+                                                >
+                                                    {{ child.title }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </li>
+                        {% else %}
+                            <li class="relative c-main-submenu">
+                                <a
+                                    class="{{ item.classes|join(' ') }} c-main-menu__link flex flex-row items-center w-full px-4 py-3 text-sm text-left text-black uppercase transition-colors duration-150 ease-in border-transparent rounded-none md:w-auto hover:bg-gray-200 hover:text-black focus:text-black"
+                                    href="{{ item.link }}"
+                                    {% if item.target %}target="{{item.target}}"{% endif %}
+                                >
+                                    {{ item.title}}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

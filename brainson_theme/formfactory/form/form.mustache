@@ -1,0 +1,64 @@
+{{%FILTERS}}
+
+<form{{{ formAttributes | formatAttributes }}}>
+
+    {{#submitted}}
+        {{#error}}
+            <div class="error global-message">{{ error }}</div>
+        {{/error}}
+        {{^error}}
+            <div class="success global-message">
+                {{{ successTemplate }}}
+            </div>
+        {{/error}}
+    {{/submitted}}
+
+    <fieldset data-formfactory-all-fields>
+
+        {{# hiddenElementsList }}
+            {{{ . | elRender }}}
+        {{/ hiddenElementsList }}
+
+        {{# output}}
+            {{{ . }}}
+        {{/output}}
+
+        <div class="form-action-buttons">
+
+            {{# actionButtonsList  }}
+                {{{ . | elRender }}}
+            {{/actionButtonsList }}
+        </div>
+    </fieldset>
+</form>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const formfactory = document.querySelector('[data-formfactory]');
+    const allFields = document.querySelector('[data-formfactory-all-fields]');
+    const submitButton = document.querySelector('[data-formfactory] [type=submit]');
+
+    const yOffset = -160;
+
+    formfactory.addEventListener('formfactory_onSuccess', function(){
+        submitButton.classList.remove("loading");
+
+        const y = formfactory.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({
+            top: y,
+            behavior: 'smooth'
+        });
+        allFields.setAttribute('disabled', '');
+    });
+
+    formfactory.addEventListener('formfactory_onSubmit', function(){
+        submitButton.classList.add("loading");
+        submitButton.setAttribute('disabled', '');
+    });
+
+    formfactory.addEventListener('formfactory_onError', function(){
+        submitButton.classList.remove("loading");
+        submitButton.removeAttribute('disabled');
+    });
+});
+</script>

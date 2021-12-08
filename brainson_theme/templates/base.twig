@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html class="no-js" lang="de">
+    {% include 'templates/partials/html-head.twig' %}
+    <body class="flex flex-col min-h-screen {{ body_class }}">
+
+        {% block site_header %}
+            {% include 'templates/partials/site-header.twig' %}
+        {% endblock %}
+
+        {% block content_before_breadcrumbs %}
+            Sorry, no content
+        {% endblock %}
+
+        {% if breadcrumb %}
+            {% block breadcrumb %}
+                <div class="o-container">
+                    {% include 'templates/partials/breadcrumb.twig' %}
+                </div>
+            {% endblock %}
+        {% endif %}
+
+        {% block content %}
+            Sorry, no content
+        {% endblock %}
+
+        {% include "templates/partials/site-footer.twig" %}
+
+        {{ function('wp_footer') }}
+
+    </body>
+</html>

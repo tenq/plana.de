@@ -1,0 +1,16 @@
+[
+    {
+        "question": "Wie heißt die Hauptstadt von Bayern?",
+        "answers": [
+            "München",
+            "Muenchen"
+        ]
+    },
+    {
+        "question": "Mit welcher Währung wird in Deutschland bezahlt?",
+        "answers": [
+            "Euro",
+            "€"
+        ]
+    }
+]

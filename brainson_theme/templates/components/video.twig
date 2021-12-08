@@ -1,0 +1,22 @@
+<div id="{{ object.data.uniqueid }}" class="c-video {{ object.get_spacing_top_class_string }} {{ object.get_alternate_background_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }}">
+    {% if not object.isNested %}
+        <div class="{{ object.get_container_class_string }}">
+    {% endif %}
+
+    <div class="shadow-lg">
+        <div class="relative aspect-w-16 aspect-h-9">
+            {{ object.getEmbedHTML | youtubeEmbedOptions }}
+        </div>
+
+        {% if object.data.title is not empty or object.data.description is not empty %}
+        <div class="px-4 py-4 bg-white lg:px-6">
+            <h3 class="mt-0 text-xl font-bold">{{ object.data.title }}</h3>
+            <p class="mt-2 leading-relaxed">{{ object.data.description}}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    {% if not object.isNested %}
+        </div>
+    {% endif %}
+</div>

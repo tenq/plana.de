@@ -1,0 +1,36 @@
+<div class="relative mx-auto max-w-hero">
+    {{get_attachment_image(image, 'c1-full', 'block w-full h-auto max-h-136 object-cover')}}
+
+    {% if show_text %}
+        <div
+            class="
+                xs:absolute top-0 bottom-0 left-0 mt-2 xs:mt-0 right-0 flex flex-col justify-center xs:bg-opacity-25 xs:px-4 sm:px-8 lg:px-12
+                {{ text_color == 'light' ? 'xs:text-white xs:bg-black' : 'xs:text-gray-900 xs:bg-white' }}
+                {{ text_position == 'left' ? 'items-start' : 'items-start md:items-end' }}
+            "
+        >
+            <div class="max-w-md md:-mt-4">
+                {% if title %}
+                    <h2 class="mt-0 text-3xl font-bold">{{ title }}</h2>
+                {% endif %}
+
+                {% if body %}
+                    <div class="mt-2 text-base leading-normal">
+                        {{ body }}
+                    </div>
+                {% endif %}
+
+                {% if ctabutton_url %}
+                    <a
+                        href="{{ ctabutton_url }}"
+                        class="mt-4 c-button"
+                        target="{{ ctabutton_target }}"
+                    >
+
+                        {{ ctabutton_title }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,4 @@
+[submodule "brainson-deployment"]
+    path = brainson-deployment
+    url = git@git.brainson.de:brainson/brainson-deployment.git
+    branch = master

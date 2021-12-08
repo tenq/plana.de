@@ -1,0 +1,21 @@
+/* Use only if absolutely necessary and watch out for accidental horizontal scrolling */
+
+@responsive {
+    .container-break {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+
+    .container-break-reset {
+        width: auto;
+        position: inherit;
+        left: auto;
+        right: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

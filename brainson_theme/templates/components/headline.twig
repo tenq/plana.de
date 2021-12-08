@@ -1,0 +1,44 @@
+{% if object.data.alignment == 'left' %}
+    {% set alignment = 'text-left' %}
+{% elseif object.data.alignment == 'right' %}
+    {% set alignment = 'text-right' %}
+{% elseif object.data.alignment == 'center' %}
+    {% set alignment = 'text-center' %}
+{% endif %}
+
+
+<div id="{{ object.data.uniqueid }}" class="c-heading {{ alignment }} {{ object.get_spacing_top_class_string }} {{ object.get_alternate_background_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }}">
+    {% if not object.isNested %}
+        <div class="{{ object.get_container_class_string }}">
+    {% endif %}
+
+        {% if object.data.topline %}
+        <div class="mb-1 font-bold uppercase c-heading__topline">
+            {{ object.data.topline }}
+        </div>
+        {% endif %}
+
+        {% if object.data.level == 'h1' %}
+            <h1 class="{{ text_align }} mt-0 text-3xl md:4xl lg:text-5xl font-bold tracking-tight text-gray-900 c-heading__title">
+                {{ object.data.heading }}
+            </h1>
+        {% elseif object.data.level == 'h2' %}
+            <h2 class="{{ text_align }} mt-0 text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 c-heading__title">
+                {{ object.data.heading }}
+            </h2>
+        {% elseif object.data.level == 'h3' %}
+            <h3 class="{{ text_align }} mt-0 text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 c-heading__title">
+                {{ object.data.heading }}
+            </h3>
+        {% elseif object.data.level == 'h4' %}
+            <h4 class="{{ text_align }} mt-0 text-lg md:text-xl lg:text-2xl font-bold text-gray-900 c-heading__title">
+                {{ object.data.heading }}
+            </h4>
+        {% endif %}
+
+    {% if not object.isNested %}
+    {# close container #}
+    </div>
+    {% endif %}
+
+</div>

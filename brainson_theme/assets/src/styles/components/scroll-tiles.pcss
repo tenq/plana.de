@@ -1,0 +1,33 @@
+@import "lightgallery.js/src/css/lightgallery.css";
+
+@layer components {
+
+  .c-scroll-tiles__container {
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-right: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .c-scroll-tiles__fader {
+    @apply h-full w-16 absolute top-0;
+
+    &--right {
+      @apply -right-1;
+      background: linear-gradient(
+        270deg,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+
+    &--left {
+      @apply -left-1;
+      background: linear-gradient(
+        270deg,
+        rgba(255, 255, 255, 0) 0%,
+        #ffffff 100%
+      );
+    }
+  }
+} 

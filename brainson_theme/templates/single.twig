@@ -1,0 +1,30 @@
+{% extends "templates/base.twig" %}
+
+
+
+{% block site_header %}
+    {% include 'templates/partials/site-header.twig' %}
+{% endblock %}
+
+{% block breadcrumb %}
+    <div class="mt-6 o-container">
+        {% include 'templates/partials/breadcrumb.twig' %}
+    </div>
+{% endblock %}
+
+{% block content_before_breadcrumbs %}
+    {% if post_image %}
+        <div class="mt-0 c-image">
+
+            {% include 'templates/partials/hero-image.twig'  with {
+                image: post_image
+            }%}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div>
+        {{ render_slot(post.ID, 'main') }}
+    </div>
+{% endblock %}

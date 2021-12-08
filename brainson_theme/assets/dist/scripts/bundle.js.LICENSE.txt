@@ -1,0 +1,6 @@
+/**!
+ * lg-thumbnail.js | 1.2.0 | May 20th 2020
+ * http://sachinchoolur.github.io/lg-thumbnail.js
+ * Copyright (c) 2016 Sachin N; 
+ * @license GPLv3 
+ */

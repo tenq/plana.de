@@ -1,0 +1,35 @@
+:root {
+    --container-gap: 2rem;
+    --container-width: calc(56rem + var(--container-gap));
+
+    /* Larger viewports have bigger horizontal spacing to the edges */
+    @screen sm {
+        --container-gap: 4rem;
+    }
+}
+
+/*
+ * Container width is either the full width minus horizontal "padding" (set in `--container-gap`)
+ * or, if bigger, the defined `--container-width`
+ */
+.o-container {
+    @apply mx-auto;
+    width: min(calc(100% - var(--container-gap)), var(--container-width));
+}
+
+/*
+ * Container modifiers only need to override the `--container-width` custom property
+ */
+
+ .o-container--pull-out {
+    --container-width: calc(59rem + var(--container-gap));
+}
+
+.o-container--lg {
+    --container-width: calc(67.5rem + var(--container-gap));
+}
+
+.o-container--sm {
+    --container-width: calc(45rem + var(--container-gap));
+}
+

@@ -1,0 +1,146 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HTML5 Blank\n"
+"POT-Creation-Date: 2017-05-24 13:23+0200\n"
+"PO-Revision-Date: 2017-05-24 13:24+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: style.css\n"
+
+#: 404.php:6
+msgid "Page not found"
+msgstr "Seite nicht gefunden"
+
+#: 404.php:8
+msgid "Return home?"
+msgstr "Zurück zur Startseite?"
+
+#: archive.php:5
+msgid "Archives"
+msgstr "Archive"
+
+#: author.php:8
+msgid "Author Archives for"
+msgstr "Autorenarchiv von"
+
+#: author.php:14
+msgid "About"
+msgstr "Über uns"
+
+#: author.php:35 loop.php:16 single.php:21
+msgid "Published by"
+msgstr "Veröffentlicht von"
+
+#: author.php:36 single.php:22
+msgid "Leave your thoughts"
+msgstr "Kommentar hinterlassen"
+
+#: author.php:36 single.php:22
+msgid "1 Comment"
+msgstr "1 Kommentar"
+
+#: author.php:36 single.php:22
+msgid "% Comments"
+msgstr "% Kommentare"
+
+#: author.php:50 loop.php:27 page.php:26 single.php:43
+msgid "Sorry, nothing to display."
+msgstr "Sorry, nichts anzuzeigen."
+
+#: category.php:5
+msgid "Categories for"
+msgstr "Kategorien für"
+
+#: functions.php:105
+msgid "Header Menu"
+msgstr "Header-Menü"
+
+#: functions.php:106
+msgid "Sidebar Menu"
+msgstr "Seitenleiste Navigation"
+
+#: functions.php:107
+msgid "Extra Menu"
+msgstr "Zusätzliches Menü"
+
+#: functions.php:171
+msgid "You are not currently logged in."
+msgstr "Sie sind im Moment nicht angemeldet."
+
+#: functions.php:264
+msgid "This filename is not allowed. Please use a meaningful name."
+msgstr ""
+"Dieser Dateiname ist nicht zulässig. Bitte verwenden Sie einen "
+"aussagekräftigen Namen."
+
+#: includes/settings.php:6 includes/settings.php:7
+msgid "Theme Settings"
+msgstr "Theme-Einstellungen"
+
+#: index.php:5
+msgid "Latest Posts"
+msgstr "Letzte Beiträge"
+
+#: search.php:5
+#, php-format
+msgid "%s Search Results for"
+msgstr "%s Suchergebnisse für"
+
+#: searchform.php:3
+msgid "To search, type and hit enter."
+msgstr "Suchbegriff eingeben."
+
+#: searchform.php:4
+msgid "Search"
+msgstr "Suche"
+
+#: single.php:26
+msgid "Tags:"
+msgstr "Schlagwörter (Tags):"
+
+#: single.php:28
+msgid "Categorised in:"
+msgstr "Kategorisiert:"
+
+#: single.php:30
+msgid "This post was written by"
+msgstr "Dieser Beitrag wurde geschrieben von"
+
+#: tag.php:5
+msgid "Tag Archive:"
+msgstr "Schlagwort-Archiv:"
+
+#. Theme Name of the plugin/theme
+msgid "Brainson Boilerplate"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://www.brainson.de"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "HTML5 Blank WordPress Theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Alexander Schlegel (@Sysix), Todd Motto (@toddmotto)"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https//www.brainson.de, http://toddmotto.com"
+msgstr ""

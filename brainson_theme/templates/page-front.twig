@@ -1,0 +1,19 @@
+{% extends "templates/base.twig" %}
+
+
+
+{% block site_header %}
+    {% include 'templates/partials/site-header.twig' %}
+{% endblock %}
+
+{% block content_before_breadcrumbs %}
+    <div class="">
+        {{ render_slot(post.ID, 'main_bb') }}
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="mt-16">
+        {{ render_slot(post.ID, 'main') }}
+    </div>
+{% endblock %}

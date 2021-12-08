@@ -1,0 +1,56 @@
+<nav aria-label="Breadcrumb" class="c-breadcrumb">
+    <ol class="flex flex-wrap items-center c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+
+        {% for key, breadcrumb, index in breadcrumb %}
+            {% if loop.index == 1 %}
+                <li class="inline-flex items-center c-breadcrumb__item {{ breadcrumb.class }}" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="{{ key + 1 }}" />
+                    <a class="inline-flex items-center text-gray-600" href="{{ breadcrumb.url }}">
+                        <span class="sr-only">{{__('Zur Startseite', 'brainson_theme')}}</span>
+                        <meta itemprop="name" content="{{ breadcrumb.name }}" />
+                        <meta itemprop="item" content="{{ breadcrumb.url }}" />
+                        <svg class="w-5 h-5 md:w-6 md:h-6">
+                            <use xlink:href="{{site.theme.path}}/assets/dist/svg/sprite.svg#icon-home"></use>
+                        </svg>
+                    </a>
+                    {% if not loop.last %}
+                        <svg class="w-5 h-5 mx-2 text-gray-600">
+                            <use xlink:href="{{theme.path}}/assets/dist/svg/sprite.svg#icon-chevron-right"></use>
+                        </svg>
+                    {% endif %}
+                </li>
+            {% else %}
+                <li class="inline-flex items-center c-breadcrumb__item {{ breadcrumb.class }}" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="{{ key + 1 }}" />
+
+                    {% if not loop.last %}
+                        <a
+                            class="text-sm p-1 hover:underline focus:underline c-breadcrumb__link text-gray-900}}"
+                            href="{{ breadcrumb.url }}"
+                            itemscope itemtype="https://schema.org/WebPage"
+                            itemprop="item" itemid="{{ breadcrumb.url }}"
+                        >
+                            <span itemprop="name">{{ breadcrumb.name }}</span>
+                        </a>
+
+                        <svg class="w-5 h-5 mx-2 text-gray-600">
+                            <use xlink:href="{{theme.path}}/assets/dist/svg/sprite.svg#icon-chevron-right"></use>
+                        </svg>
+                    {% else %}
+                        <span 
+                            class="p-1 text-sm font-bold text-gray-600"
+                            aria-current="page"
+                            itemscope itemtype="https://schema.org/WebPage"
+                            itemprop="item" itemid="{{ breadcrumb.url }}"
+                        >
+                            <meta itemprop="name" content="{{ breadcrumb.name }}"/>
+                            {{ breadcrumb.name }}
+                        </span>
+                    {% endif %}
+                </li>
+            {% endif %}
+
+
+        {% endfor %}
+    </ol>
+</nav>

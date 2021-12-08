@@ -1,0 +1,7 @@
+<{{ type ? 'a' : 'button'}} 
+    {{ href ? 'href="' ~ href ~ '"' : ''}}
+    class="c-button {% if style == 'secondary' %}c-button--secondary{% endif %} transition duration-100 ease-in group transform font-ui active:translate-y-0.5 border-transparent border-3 bg-clip-padding"
+    {{target ? 'target="' ~ target ~ '" rel="noopener"' : ''}}
+>
+    {{text}}
+</{{ type ?'a':'button'}}>

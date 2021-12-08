@@ -1,0 +1,29 @@
+{% set infoboxAlignment = object.data.alignment %}
+
+{% if infoboxAlignment == 'justify-start' %}
+    {% set alignmentClass = 'justify-start' %}
+
+{% elseif infoboxAlignment == 'justify-center'  %}
+    {% set alignmentClass = 'justify-center' %}
+
+{% else %}
+    {% set alignmentClass = 'justify-end' %}
+{% endif %}
+
+<div id="{{ object.data.uniqueid }}" class="c-infobox {{ object.get_spacing_top_class_string }}">
+    <div class="flex {{ alignmentClass }} {{ object.get_container_class_string }}">
+        <div class="px-4 pb-4 shadow-lg hover:shadow-box group sm:max-w-2xl xl:max-w-3xl">
+            <div class="flex items-start">
+                <div class="{{ object.getIconClassString }} z-10 flex items-center justify-center text-white bg-gray-500 group-hover:bg-prime group-focus:bg-prime mr-4 {{object.data.icon_style == 'rounded-full' ? 'rounded-full p-3' : 'px-2 py-3'}}">
+                    <svg class="text-3xl xl:text-4xl c-icon">
+                        <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-{{ object.data.icon }}"></use>
+                    </svg>
+                </div>
+                <h3 class="flex-grow mt-4 leading-6">{{object.data.title}}</h3>
+            </div>
+            <div class="mt-4 c-text">
+                <p>{{object.data.text}}</p>
+            </div>
+        </div>
+    </div>
+</div>

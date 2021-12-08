@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteBase /
+
+Header set X-Robots-Tag "noindex, nofollow" "expr=env('WP_ENV') != 'production'"
+
+# Rewrite to wp-admin
+RewriteRule ^wp-admin/(.*)$ /wp/wp-admin/$1 [L,NE,R]
+
+# Rewrite UC to LC
+RewriteCond $1 [A-Z]
+RewriteCond %{REQUEST_FILENAME} !-f                                                                      
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^/?(.*)$ /${lowercase:$1} [R=302,L]
+
+# REWRITE RULE FOR JS/CSS VERSIONING
+RewriteRule ^(.*)\.\d+\.(css|js)$ $1.$2 [L]
+
+# BEGIN WordPress
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+# END WordPress

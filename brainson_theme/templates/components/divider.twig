@@ -1,0 +1,11 @@
+<div id="{{ object.data.uniqueid }}" class="c-divider {{ object.get_spacing_top_class_string }} {{ object.get_alternate_background_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }}">
+    {% if not object.isNested %}
+        <div class="o-container o-container--lg">
+    {% endif %}
+
+        <hr class="c-divider__ruler {{ object.data.global_alternate_background ? 'border-gray-500' : 'border-gray-400'}}"  />
+
+    {% if not object.isNested %}
+        </div>
+    {% endif %}
+</div>

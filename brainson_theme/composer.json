@@ -1,0 +1,16 @@
+{
+  "name": "brainson/brainson_theme",
+  "version": "1.0",
+  "type": "wordpress-theme",
+  "require": {
+    "composer/installers": "^1.0",
+    "twig/twig": "^2.10",
+    "twig/extensions": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Brainson\\Scaffold\\": "",
+      "Brainson\\Scaffold\\ContentComponents\\": "components"
+    }
+  }
+}

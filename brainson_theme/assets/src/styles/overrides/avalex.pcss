@@ -1,0 +1,18 @@
+.avalex-container {
+    /*
+     * Because Avalex' table of contents uses inline CSS to set
+      `padding-left: 0 !important;` for the ToC's `<ul>` this can't be overridden to set the desired
+      padding in a coherent way.
+
+      However, every other <ul> is rendered without said inline style. So to achieve the desired
+      appearance all of Avalax' `<ul>`s receive a margin-left instead of the global padding-left.
+      */
+    ul {
+        padding-left: 0;
+        margin-left: 1.2em;
+    }
+
+    h2 {
+        margin-top: 1.2em;
+    }
+}

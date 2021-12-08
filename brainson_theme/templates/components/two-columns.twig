@@ -1,0 +1,42 @@
+{% if object.data.weighting == 'one-two' %}
+    {% set column_1_classes = 'md:w-1/3' %}
+    {% set column_2_classes = 'md:w-2/3' %}
+
+{% elseif object.data.weighting == 'two-one' %}
+    {% set column_1_classes = 'md:w-2/3' %}
+    {% set column_2_classes = 'md:w-1/3' %}
+
+{% elseif object.data.weighting == 'three-two' %}
+    {% set column_1_classes = 'md:w-3/5' %}
+    {% set column_2_classes = 'md:w-2/5' %}
+
+{% elseif object.data.weighting == 'two-three' %}
+    {% set column_1_classes = 'md:w-2/5' %}
+    {% set column_2_classes = 'md:w-3/5' %}
+
+{% elseif object.data.weighting == 'one-one' %}
+    {% set column_1_classes = 'md:w-1/2' %}
+    {% set column_2_classes = 'md:w-1/2' %}
+{% endif %}
+
+{% if object.data.v_alignment == 'center' %}
+    {% set align_items = 'md:items-center' %}
+{% elseif object.data.v_alignment == 'bottom' %}
+    {% set align_items = 'md:items-end' %}
+{% elseif object.data.v_alignment == 'top' %}
+    {% set align_items = 'md:items-start' %}
+{% endif %}
+
+
+<div id="{{ object.data.uniqueid }}" class="{{ object.get_spacing_top_class_string }} {{ object.get_alternate_background_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }}">
+    <div class="{{ object.get_container_class_string }}">
+        <div class="md:flex md:-mx-4 lg:-mx-6 {{ align_items }}">
+            <div class="w-full md:px-4 lg:px-6 {{ column_1_classes }}">
+                {{render_slot(post.ID, object.slots.slot1, object.data.column1, object)}}
+            </div>
+            <div class="w-full md:px-4 mt-4 lg:px-6 md:mt-0 {{ column_2_classes }}">
+                {{render_slot(post.ID, object.slots.slot2, object.data.column2, object)}}
+            </div>
+        </div>
+    </div>
+</div>

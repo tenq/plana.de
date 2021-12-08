@@ -1,0 +1,15 @@
+<fieldset class="mb-2 class-{{ element.getId }}">
+    <label class="block text-sm font-bold text-gray-900 uppercase" for="{{ element.getId }}">
+            {{ element.getLabel }}
+            {{# isRequired }}
+                    <span aria-hidden=true>*</span>
+                    <span class="sr-only">Pflichfeld</span>
+            {{/isRequired}}
+    </label>
+
+    {{{ element.render }}}
+
+    {{# error}}
+        <div class="error-text">{{ error }}</div>
+    {{/error}}
+</fieldset>

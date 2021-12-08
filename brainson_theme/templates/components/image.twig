@@ -1,0 +1,58 @@
+<div id="{{ object.data.uniqueid }}" class="c-image {{ object.get_spacing_top_class_string }} {{ object.get_alternate_background_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }}">
+
+    {% if object.data.style == 'hero' %}
+
+        {% include 'templates/partials/hero-image.twig' with {
+            image : object.data.image,
+            show_text : object.data.show_text,
+            text_color: object.data.text_color,
+            text_position: object.data.text_position,
+            title: object.data.title,
+            body: object.data.body,
+            ctabutton_url: object.data.cta_button.url,            
+            ctabutton_target: object.data.cta_button.target,            
+            ctabutton_title: object.data.cta_button.title
+        }%}
+
+    {% else %}
+        <div class="{{ object.get_container_class_string }}">
+            <div class="relative">
+                {{get_attachment_image(object.data.image, 'c1-desktop', 'block w-full h-auto')}}
+
+                {% if object.data.show_text %}
+                    <div
+                        class="
+                            xs:absolute top-0 bottom-0 mt-2 xs:mt-0 left-0 right-0 flex flex-col justify-center xs:bg-opacity-25 xs:px-4 sm:px-8 lg:px-12
+                            {{ object.data.text_color == 'light' ? 'xs:text-white xs:bg-black' : 'xs:text-gray-900 xs:bg-white' }}
+                            {{ object.data.text_position == 'left' ? 'items-start' : 'items-start md:items-end' }}
+                        "
+                    >
+                        <div class="max-w-md md:-mt-4">
+                            {% if object.data.title %}
+                                <h2 class="mt-0 text-3xl font-bold">{{ object.data.title }}</h2>
+                            {% endif %}
+
+                            {% if object.data.body %}
+                                <div class="mt-2 text-base leading-normal">
+                                    {{ object.data.body }}
+                                </div>
+                            {% endif %}
+
+                            {% if object.data.cta_button.url %}
+                                <a
+                                    href="{{ object.data.cta_button.url }}"
+                                    class="mt-4 c-button"
+                                    target="{{ object.data.cta_button.target }}"
+                                >
+
+                                    {{ object.data.cta_button.title }}
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,19 @@
+<div class="{{ object.get_spacing_top_class_string }} {{ object.containerClasses | join(' ') }} bg-gray-100 " >
+
+    <a href="{{object.data.button.url}}" target="{{object.data.button.target}}" class="block overflow-hidden aspect-w-3 aspect-h-2">
+        {{get_attachment_image(object.data.image, 'teaser_card_medium', 'object-cover ease-in transition duration-200 hover:scale-110 focus:scale-110')}}
+    </a>
+    <div class="p-6">
+        <div class="text-xl font-bold lg:text-2xl">{{object.data.title}}</div>
+        
+        <div class="mt-2">{{object.data.text}}</div>
+        
+         <div class="mt-4">
+            {% include 'templates/partials/button.twig' with {
+                target: object.data.button.target,
+                text: object.data.button.title,
+            } %}
+        </div>
+    </div>
+
+</div>

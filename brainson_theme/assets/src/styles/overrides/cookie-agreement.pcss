@@ -1,0 +1,47 @@
+.dsgvo_toolkit_overlay  {
+    background: rgba(0, 0, 0, .8);
+    display: flex;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.dsgvo_tookit_dom_replacer_wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border: 0;
+}
+
+.dsgvo_toolkit_overlay {
+    @apply bg-gray-700 z-10;
+}
+
+.dsgvo_toolkit_overlay_text {
+    @apply text-center mx-auto px-8 text-gray-300;
+}
+
+.dsgvo_toolkit_overlay_text a {
+    @apply text-white;
+
+    &:hover {
+        @apply underline;
+    }
+}
+
+
+.dsgvo_toolkit_accept_button {
+    @apply bg-gray-800 mt-4;
+
+    &:hover {
+        @apply bg-gray-900;
+    }
+}

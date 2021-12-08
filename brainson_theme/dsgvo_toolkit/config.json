@@ -1,0 +1,54 @@
+{
+  "image_placeholder": "data:image\/gif;base64:placeholder",
+  "cookiebanner": {
+    "title": "Cookie-Einstellungen",
+    "text": "<p>Wir verwenden Cookies, um Ihnen ein optimales Webseiten-Erlebnis zu bieten. Dazu zählen Cookies verschiedener Kategorien. Sie können selbst entscheiden, welche Kategorien Sie zulassen möchten. Bitte beachten Sie, dass auf Basis Ihrer Einstellungen womöglich nicht mehr alle Funktionalitäten der Seite zur Verfügung stehen.</p>",
+    "text_shortcode": "<p>Wir verwenden Cookies, um Ihnen ein optimales Webseiten-Erlebnis zu bieten. Dazu zählen Cookies verschiedener Kategorien. Sie können selbst entscheiden, welche Kategorien Sie zulassen möchten. Bitte beachten Sie, dass auf Basis Ihrer Einstellungen womöglich nicht mehr alle Funktionalitäten der Seite zur Verfügung stehen.</p>",
+    "text_agree_all_button": "Alle auswählen & bestätigen",
+    "text_agree_selected_button": "Auswahl bestätigen",
+    "css_class_button_agree_selected": "button",
+    "css_class_button_agree_all": "button",
+    "css_class_banner": "caStylingBanner",
+    "layout": "caFull",
+    "impressum": 1,
+    "datenschutz": 2
+  },
+  "services": [
+    {
+      "name": "google-analytics",
+      "title": "Google Analytics",
+      "category": "statistics",
+      "target": "",
+      "active": true,
+      "call": "Brainson\\DSGVOT\\Service\\GoogleAnalyticsServiceOptIn"
+    },
+    {
+        "name": "youtube",
+        "title": "YouTube",
+        "category": "content",
+        "target": "Wird verwendet, um YouTube-Inhalte zu entsperren.",
+        "active": true,
+        "call": "Brainson\\DSGVOT\\Service\\YoutubeService"
+    },
+    {
+      "name": "vimeo",
+      "title": "Vimeo",
+      "category": "content",
+      "target": "Wird verwendet, um Vimeo-Inhalte zu entsperren.",
+      "active": true,
+      "call": "Brainson\\DSGVOT\\Service\\VimeoService"
+    }
+  ],
+  "category_required": {
+    "show": true,
+    "title": "Notwendig",
+    "description": "Notwendige Cookies helfen dabei Grundfunktionen zur Verfügung zu stellen. Ohne diese Cookies kann die Website nicht richtig funktionieren."
+  },
+  "categories": [
+    {
+      "slug": "statistics",
+      "title": "Statistik & Marketing",
+      "description": "Um unser Angebot und unsere Webseite ständig zu verbessern, erfassen wir anonymisierte Daten für Statistiken und Analysen. Mithilfe dieser Cookies können wir beispielsweise die Besucherzahlen und den Effekt bestimmter Seiten unseres Web-Auftritts ermitteln und unsere Inhalte laufend optimieren.<br />Die Marketing Cookies dienen dazu um Ihnen passende Inhalte/Anzeigen in unserer Werbung anbieten zu können. Somit können wir Nutzern Angebote präsentieren, die für Sie besonders relevant sind."
+    }
+  ]
+}

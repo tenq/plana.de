@@ -1,0 +1,66 @@
+<div class="{{ object.get_spacing_top_class_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }} {{ object.containerClasses | join(' ') }} relative">
+    <div class="{{ object.get_container_class_string }} w-full o-container mx-auto mb-20 ">
+        <div class="relative">
+            <div class="overflow-hidden">
+                <div class="flex items-stretch slider">
+                    {% for slide in object.data.slides %}
+                        <div class="relative !flex w-full max-h-112">
+                            {{ get_attachment_image(slide.image, 'c12-image-slider-retina', 'object-cover h-full max-w-none w-full') }}
+                            {% if slide.title %}
+                                <div class="absolute bottom-0 w-full">
+                                    <div class="">
+                                        <div class="flex flex-col w-full p-10 bg-white bg-opacity-70">
+                                            <span class="max-w-xl mb-4 text-3xl font-bold text-gray-900">{{ slide.title }}</span>
+                                            {% if slide.subline %}
+                                            <span class="max-w-xl text-gray-700">{{ slide.subline }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="absolute transform -translate-y-1/2 bg-white rounded-none -left-1 lg:-left-12 top-1/2 z-49 hover:text-red-600 focus:text-red-600">
+                <button aria-label="Previous" class="slider__prev">
+                    <div class="flex items-center justify-center w-8 h-8 xs:w-11 xs:h-11">
+                        <svg class="c-icon">
+                            <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-chevron-left"></use>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            
+            <div class="absolute transform -translate-y-1/2 bg-white rounded-none -right-1 lg:-right-12 top-1/2 z-49 hover:text-red-600 focus:text-red-600">
+                <button aria-label="Next" class="slider__next">
+                    <div class="flex items-center justify-center w-8 h-8 xs:w-11 xs:h-11">
+                        <svg class="c-icon">
+                            <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-chevron-right"></use>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+
+            <div class="absolute w-full bottom-2 md:bottom-3">
+                <div class="flex justify-center slider__pagination o-container">
+                    {% for slide in object.data.slides %}
+                        <button aria-label="Slide" data-index="{{ loop.index }}" class="block p-3 duration-100 transform hover:scale-125 focus:scale-125 md:p-2">
+                            <div class=" w-3 h-3 bg-white pointer-events-none rounded shadow {% if loop.first %}opacity-100{% else %}opacity-40{% endif %}"></div>
+                        </button>
+                    {% endfor %}
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+<style>
+.tns-ovh{overflow: visible;}
+</style>

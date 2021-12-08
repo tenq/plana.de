@@ -1,0 +1,111 @@
+<div id="caBanner" class="fixed inset-0 hidden h-full bg-gray-800 bg-opacity-80 caBanner banner" x-data="{ show_details: false, show_category: null }">
+
+	<div class="fixed bottom-0 flex items-end justify-center w-full h-full max-w-full md:inset-0">
+
+		<div class="relative w-full max-h-screen p-6 md:p-8 overflow-auto bg-white shadow-lg md:max-w-4xl md:mb-[20vh] md:m-4 banner-inner">
+
+			<div class="mb-3 text-xl font-bold lg:text-2xl">
+				{{ cookiebanner.title }}
+			</div>
+			<div x-show="!show_details">
+				<div class="c-text c-text--max-w-none">
+					<div class="text-base">
+						{{cookiebanner.text}}
+
+						<p>{{ __('Weitere Informationen finden Sie in unserer <a href="%s" class="text-gray-600 focus:underline">Datenschutzerklärung</a>', 'brainson_theme') | format(function('get_permalink', cookiebanner.datenschutz) ) }}.</p>
+					</div>
+				</div>
+
+
+				<div class="flex flex-col mt-6 -mx-2 md:flex-row">
+					<label class="flex items-center mx-2 text-gray-400 cursor-not-allowed">
+						<input type="checkbox" class="text-gray-400 form-checkbox" checked disabled>
+						<span class="ml-2">{{ category_required.title }}</span>
+					</label>
+
+					{% for category in categories %}
+						<label class="flex items-center mx-2 cursor-pointer">
+							<input type="checkbox" class="text-blue-500 cursor-pointer form-checkbox ca-category category-checkbox focus:ring-0 focus-visible:outline-none hover:bg-blue-500 hover:border-transparent focus:bg-blue-500 focus:border-transparent" data-category="{{ category.slug }}" id="category-{{ category.slug }}">
+							<span class="ml-2">{{ category.title }}</span>
+						</label>
+					{% endfor %}
+				</div>
+			</div>
+
+			<div class="mt-6 details" x-cloak x-show="show_details">
+				<div class="px-4 py-4 mb-2 bg-gray-100 cursor-pointer hover:bg-gray-200" @click="show_category !== '{{ category_required.slug }}' ? show_category = '{{ category_required.slug }}' : show_category = null">
+					<button class="flex items-center justify-between w-full font-bold cursor-pointer">
+						<span>{{ category_required.title }}</span>
+						<svg class="text-sm transition duration-150 ease-in transform c-icon" :class="[show_category == '{{ category_required.slug }}' ? 'rotate-180' : '']">
+							<use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-chevron-down"></use>
+						</svg>
+					</button>
+
+					<div class="mt-2" x-show="show_category == '{{ category.slug }}'">
+						<div class"c-text c-text--max-w-none">
+							<div class="text-base">
+								{{ category_required.description }}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{% for category in categories %}
+					<div class="px-4 py-4 mb-2 bg-gray-100 cursor-pointer hover:bg-gray-200" @click="show_category !== '{{ category.slug }}' ? show_category = '{{ category.slug }}' : show_category= null">
+						<button class="flex items-center justify-between w-full font-bold cursor-pointer">
+							<span>{{ category.title }}</span>
+							<svg class="text-sm transition duration-150 ease-in transform c-icon " :class="[show_category == '{{ category.slug }}' ? 'rotate-180' : '']">
+								<use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-chevron-down"></use>
+							</svg>
+						</button>
+
+
+						<div class="mt-2" x-show="show_category == '{{ category.slug }}'">
+							<div class"c-text c-text--max-w-none">
+								<div class="text-base">
+									{{ category.description }}
+								</div>
+							</div>
+							<div class="mt-3 -mx-2">
+								{% for service in services %}
+									{% if service.category == category.slug %}
+										<label class="flex items-center mx-2 cursor-pointer">
+											<input type="checkbox" class="text-blue-500 cursor-pointer form-checkbox service-checkbox category-checkbox focus:ring-0 focus-visible:outline-none hover:bg-blue-500 hover:border-transparent focus:bg-blue-500 focus:border-transparent" data-cookie-group="{{ service.category }}" id="caCookie-{{ service.name }}">
+											<span class="ml-2">{{ service.title }}</span>
+										</label>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+
+
+			<div class="mt-6">
+				<button @click="show_details = !show_details" class="inline-flex items-center cursor-pointer hover:underline">
+					<span x-show="!show_details">
+						{{ __('Details anzeigen', 'brainson_theme') }}
+					</span>
+					<span x-show="show_details">
+						{{ __('Details verbergen', 'brainson_theme') }}
+					</span>
+
+					<svg class="ml-2 text-sm transition duration-150 ease-in transform c-icon" :class="[show_details ? 'rotate-180' : ' ']">
+						<use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-chevron-down"></use>
+					</svg>
+				</button>
+			</div>
+
+			<div class="mt-4">
+
+				<button class="w-full mb-2 mr-2 sm:w-auto sm:mb-0 caBtnAgreeAll c-button" id="caBtnAgreeAll">{{ cookiebanner.text_agree_all_button }}</button>
+				<button class="w-full sm:w-auto sm:mb-0 caBtnAgreeSelected c-button c-button--secondary" id="caBtnAgreeSelected">{{ cookiebanner.text_agree_selected_button }}</button>
+			</div>
+
+			<div class="mt-4">
+				<a href="{{ function('get_permalink', cookiebanner.impressum) }}" class="text-sm hover:underline">{{ __('Impressum', 'brainson_theme') }}</a>
+			</div>
+		</div>
+	</div>
+</div>

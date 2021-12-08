@@ -1,0 +1,11 @@
+/* Focusing the button with a keyboard will show a dashed black line. */
+:focus-visible,
+button:focus-visible {
+    outline: 2px dashed theme('colors.blue.600');
+}
+
+/* Focusing the button with a mouse, touch, or stylus won't have an effect */
+:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
+}

@@ -1,0 +1,71 @@
+{
+  "name": "brainson/scaffold",
+  "minimum-stability": "stable",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Holger Sielaff",
+      "email": "holger.sielaff@brainson.de"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "johnpbloch/wordpress": "*",
+    "wpackagist-plugin/adminimize": "*",
+    "wpackagist-plugin/user-role-editor": "*",
+    "wpackagist-plugin/wp-super-cache": "*",
+    "wpackagist-plugin/wp-smushit": "*",
+    "wpackagist-plugin/classic-editor": "*",
+    "wpackagist-plugin/avalex":"*",
+    "advanced-custom-fields/advanced-custom-fields-pro": "*",
+
+    "brainson/brainson_theme": "@dev",
+    "brainson/midgard": "*",
+    "brainson/dsgvo_toolkit": "*",
+    "brainson/seo-plugin": "*",
+    "brainson/wp-auth-ldap": "*",
+
+    "timber/timber": "*",
+    "koodimonni-language/core-de_de": "*"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://wp-languages.github.io"
+    },
+    {
+      "type": "composer",
+      "url": "https://git-packages.brainson.de"
+    },
+    {
+      "type": "path",
+      "url": "brainson_theme",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
+  "extra": {
+    "wordpress-install-dir": "public/wp",
+    "installer-paths": {
+      "public/wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "public/wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "dropin-paths": {
+      "public/wp-content/languages/": ["vendor:koodimonni-language"],
+      "public/wp-content/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+      "public/wp-content/languages/themes/": ["vendor:koodimonni-theme-language"]
+    }
+  },
+  "config": {
+    "cache-files-ttl": 0
+  }
+}

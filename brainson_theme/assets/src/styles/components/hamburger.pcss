@@ -1,0 +1,54 @@
+.c-hamburger {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.c-hamburger span {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: theme('colors.gray.800');
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+
+.c-hamburger span:nth-child(1) {
+    top: 0px;
+  }
+
+  .c-hamburger span:nth-child(2),
+  .c-hamburger span:nth-child(3) {
+    top: 16px;
+  }
+
+  .c-hamburger span:nth-child(4) {
+    top: 32px;
+  }
+
+  .c-hamburger.is-open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+
+  .c-hamburger.is-open span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  .c-hamburger.is-open span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  .c-hamburger.is-open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }

@@ -1,0 +1,82 @@
+.c-text {
+    @apply leading-relaxed;
+
+    p:not(:first-child),
+    ul:not(:first-child) {
+        margin-top: 1em;
+    }
+
+    p {
+        @apply max-w-copy;
+    }
+
+    a {
+        @apply text-gray-600 hover:underline focus:underline;
+    }
+
+    h2:not(:first-child) {
+        margin-top: 1.2em;
+        @apply text-xl md:text-2xl lg:text-3xl  max-w-xl;
+    }
+
+    h3:not(:first-child),
+    h4:not(:first-child),
+    h5:not(:first-child),
+    h6:not(:first-child) {
+        margin-top: .75em;
+    }
+
+    ul {
+        @apply list-none max-w-list;
+        padding-left: 1.2em;
+    }
+
+
+    li:not(:first-child) {
+        margin-top: 1em;
+    }
+
+    li {
+        line-height: 1.5;
+        position: relative;
+        &::before {
+            @apply text-gray-600 font-bold inline-block;
+            content: "\2022";  /* unicode bullet glyph */
+            margin-left: -1em;
+            position: absolute;
+            top: -.15em;
+            width: 1em;
+        }
+    }
+}
+
+
+
+.c-text__columns {
+    column-gap: 1.5rem;
+    column-width: 30ch;
+
+    p,
+    li,
+    h2,
+    h3,
+    h4 {
+        break-inside: avoid;
+    }
+
+}
+
+
+.c-text__columns--count-1 {
+    column-count: 1;
+    > * {
+        @apply max-w-copy;
+    }
+}
+.c-text__columns--count-2 {
+    column-count: 2;
+}
+
+.c-text__columns--count-3 {
+    column-count: 3;
+}

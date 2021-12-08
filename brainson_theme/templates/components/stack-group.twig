@@ -1,0 +1,48 @@
+{% if(object.data.column_amount == 'three') %}
+    {% set flex_child_width = 'sm:w-1/3' %}
+    {% set flex_child_text = 'text-base mt-3' %}
+
+{% elseif(object.data.column_amount == 'four') %}
+    {% set flex_child_width = 'sm:w-1/2 md:w-1/4' %}
+    {% set flex_child_text = 'text-base mt-3' %}
+
+{% else %}
+    {% set flex_child_width = 'sm:w-1/3 lg:w-1/5' %}
+    {% set flex_child_text = 'text-base lg:text-sm mt-3' %}
+
+{% endif %}
+
+
+<div id="{{ object.data.uniqueid }}" class="c-stack-group {{ object.get_spacing_top_class_string }} {{object.get_alternate_background_string}} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }}">
+    <div class="{{ object.get_container_class_string }}">
+        <div class="{{ object.data.alignment == 'center' ? 'sm:justify-center' : 'sm:justify-start' }} sm:flex sm:flex-wrap sm:items-start -my-4 sm:-mx-4">
+            {% for stack in object.data.items %}
+                <div class="{{ flex_child_width }} {{ object.data.alignment == 'center' ? 'text-center' : 'text-left' }} sm:px-4 py-4">
+                    {% if stack.title %}
+                        <h3 class="text-lg font-bold leading-tight lg:text-xl">{{ stack.title }}</h3>
+                    {% endif %}
+
+                    {% if stack.image %}
+
+                        {% if object.data.alignment == 'center' and stack.style == 'round' %}
+                            {{get_attachment_image(stack.image, 'square_medium', 'mt-3 block mx-auto w-full max-w-xs rounded-full')}}
+                        {% elseif object.data.alignment == 'center' and stack.style == 'square' %}
+                            {{get_attachment_image(stack.image, 'square_medium', 'mt-3 block mx-auto w-full max-w-xs')}}
+                        {% elseif object.data.alignment == 'left' and stack.style == 'round' %}
+                            {{get_attachment_image(stack.image, 'square_medium', 'mt-3 block w-full max-w-xs rounded-full')}}
+                        {% else %}
+                            {{get_attachment_image(stack.image, 'square_medium', 'mt-3 block w-full max-w-xs')}}
+                        {% endif %}
+                    {% endif %}
+
+                    {% if stack.body %}
+                        <div class="max-w-sm {{ flex_child_text }} {{ object.data.alignment == 'center' ? 'mx-auto' : '' }}">
+                            {{ stack.body }}
+                        </div>
+                    {% endif %}
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
