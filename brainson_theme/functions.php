@@ -650,3 +650,15 @@ if (!function_exists('brainson_pre_get_posts'))
     }
     add_action('pre_get_posts', 'brainson_pre_get_posts');
 }
+
+add_filter('show_admin_bar', '__return_false');
+//
+//if (function_exists('acf_add_options_page')) {
+//    $option_page = acf_add_options_page(array(
+//        'page_title' => 'Themen Einstellungen',
+//        'menu_title' => 'Themen Einstellungen',
+//        'menu_slug' => 'theme-general-settings',
+//        'capability' => 'edit_posts',
+//        'redirect' => false
+//    ));
+//}

@@ -8,10 +8,10 @@
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
-            "version": "5.10.2",
+            "version": "5.11.4",
             "dist": {
                 "type": "zip",
-                "url": "https://git-packages.brainson.de//dist/advanced-custom-fields/advanced-custom-fields-pro/advanced-custom-fields-advanced-custom-fields-pro-5.10.2.zip"
+                "url": "https://git-packages.brainson.de//dist/advanced-custom-fields/advanced-custom-fields-pro/advanced-custom-fields-advanced-custom-fields-pro-5.11.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0"

@@ -26,9 +26,9 @@ header('X-Frame-Options: SAMEORIGIN'); // Set X-Frame-Options header to prevent 
 define('WPCACHEHOME', getenv('WPCACHEHOME') ?: $_SERVER['DOCUMENT_ROOT'] . '/wp-content/plugins/wp-super-cache/');
 define('WP_CACHE', getenv('WP_CACHE'));
 define('HTTPS_MODE', strtolower(getenv('HTTPS_MODE')) === 'on');
-define('DB_NAME', getenv('DB_NAME') ?: 'database1');
-define('DB_USER', getenv('DB_USER') ?: 'user');
-define('DB_PASSWORD', getenv('DB_PASSWORD') ?: 'moep');
+define('DB_NAME', getenv('DB_NAME') ?: 'plana');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASSWORD', getenv('DB_PASSWORD') ?: 'root');
 define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
 define('DB_PREFIX', getenv('DB_PREFIX') ?: 'wp_');
 define('WP_DEBUG', (bool)getenv('WP_DEBUG'));

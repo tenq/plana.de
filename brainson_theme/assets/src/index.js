@@ -8,6 +8,7 @@ import './scripts/static-import';
 import "./scripts/scroll-tiles.js";
 import "./scripts/gallery.js";
 import "./scripts/slider.js";
+import "./scripts/smooth-scroll.js";
 
 // Vendor dependencies
 import Alpine from 'alpinejs'

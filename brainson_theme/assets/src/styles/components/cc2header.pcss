@@ -1,0 +1,83 @@
+.сс2-header {
+    &::before {
+        content: '';
+        background: linear-gradient(84.15deg, rgba(0, 0, 0, 0.35) 24.08%, rgba(0, 0, 0, 0) 65.38%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    &-top {
+        &-logo {
+            padding: 35px 47px;
+        }
+
+        &-phone {
+            border-radius: 50px;
+            padding: 12px 26px 14px 34px;
+            @media (max-width: 400px){
+                padding: 10px 20px;
+            }
+            svg {
+                width: 16px;
+                margin-right: 12px;
+            }
+
+            &-sep {
+                margin: 0 24px;
+                height: 30px;
+                @media (max-width: 400px){
+                    margin: 0 15px;
+                }
+            }
+        }
+    }
+
+    &-content {
+        max-width: 693px;
+        h1 {
+            line-height: 1;
+            font-size: 4.25rem;
+            @media (max-width: 768px){
+                font-size: 2rem;
+            }
+        }
+
+        &-text {
+            font-size: 2rem;
+            line-height: 1.3;
+            @media (max-width: 768px){
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        }
+        &-btns{
+            &-btn1{
+                border-radius: 50px;
+                padding: 12px 32px 14px 32px;
+            }
+            &-btn2{
+                svg{
+                    width: 29px;
+                    height: 29px;
+                }
+            }
+        }
+    }
+    &-bottom{
+        padding-bottom: 2.625rem;
+        &-benefits{
+            &-item{
+                &-icon{
+                    background: #CA0813;
+                }
+            }
+        }
+        &-person {
+            bottom: 42px;
+            width: 260px;
+        }
+    }
+}

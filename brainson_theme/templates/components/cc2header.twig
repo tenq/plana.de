@@ -1,0 +1,84 @@
+<div id="{{ object.data.uniqueid }}" class="сс2-header bg-no-repeat bg-center bg-cover text-white text-base"
+     style="background-image: url('{{ object.data.items.bg.url }}');">
+    {% if not object.isNested %}
+    <div class="{{ object.get_container_class_string }} relative min-h-screen flex flex-col justify-between">
+        {% endif %}
+        <div class="сс2-header-top justify-between w-full items-center sm:flex">
+            <a
+                    href="{{ function('get_home_url') }}"
+                    title=""
+                    class="сс2-header-top-logo bg-white inline-flex">
+                <img src="{{ object.data.header.logo.url }}" alt="{{ object.data.header.logo.alt }}" width="127">
+            </a>
+            {% if object.data.header.phone %}
+                <div class="сс2-header-top-phone bg-white  items-center inline-flex mt-6 sm:mt-0 whitespace-nowrap">
+                    <svg class="c-icon">
+                        <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-phone"></use>
+                    </svg>
+                    <a href="tel:{{ object.phone(object.data.header.phone) }}"
+                       class="transition text-black hover:text-red">{{ object.data.header.phone }}</a>
+                    {% if object.data.header.anchor_title %}
+                        {% if object.data.header.anchor %}
+                            <span class="сс2-header-top-phone-sep block w-px bg-black"></span>
+                            <a href="#{{ object.data.header.anchor }}"
+                               class="сс2-header-top-phone-title smooth-scroll font-bold text-red">{{ object.data.header.anchor_title }}</a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="сс2-header-content my-28">
+            <h1 class="font-bold mb-6">{{ object.data.items.title }}</h1>
+            {% if object.data.items.text %}
+                <div class="сс2-header-content-text font-medium mb-12">{{ object.data.items.text }}</div>
+            {% endif %}
+            {% if object.data.items.btns %}
+                <div class="сс2-header-content-btns sm:flex items-center">
+                    {% if object.data.items.btns.btn1_title %}
+                        {% if object.data.items.btns.btn1_anchor %}
+                            <a href="#{{ object.data.items.btns.btn1_anchor }}"
+                               class="сс2-header-content-btns-btn1 smooth-scroll bg-white text-red font-bold mr-12 inline-flex mb-3 sm:mb-0">{{ object.data.items.btns.btn1_title }}</a>
+                        {% endif %}
+                    {% endif %}
+                    {% if object.data.items.btns.btn2_title %}
+                        {% if object.data.items.btns.btn2_anchor %}
+                            <a href="#{{ object.data.items.btns.btn2_anchor }}"
+                               class="сс2-header-content-btns-btn2 smooth-scroll inline-flex font-bold items-center whitespace-nowrap ml-6 sm:ml-0">{{ object.data.items.btns.btn2_title }}
+                                <svg class="c-icon ml-3">
+                                    <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-play"></use>
+                                </svg>
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="сс2-header-bottom  justify-between items-end xl:flex ">
+            {% if object.data.benefits %}
+                <div class="сс2-header-bottom-benefits md:flex md:items-center mb-6 xl:m-0">
+                    {% for benefit in object.data.benefits %}
+                        <div class="сс2-header-bottom-benefits-item flex items-center mb-3 md:mr-12 md:mb-0">
+                            <div class="сс2-header-bottom-benefits-item-icon w-9 h-9 flex items-center justify-center mr-4 rounded-full">
+                                <svg class="c-icon">
+                                    <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-{{ benefit.icon }}"></use>
+                                </svg>
+                            </div>
+                            <div class="сс2-header-bottom-benefits-item-text font-semibold leading-relaxed">{{ benefit.text }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="сс2-header-bottom-person">
+                {% if object.data.items.name %}
+                    <div class="сс2-header-bottom-person-name font-bold mb-4 text-xl">{{ object.data.items.name }}</div>
+                {% endif %}
+                {% if object.data.items.firm %}
+                    <div class="сс2-header-bottom-person-firm font-medium text-sm">{{ object.data.items.firm }}</div>
+                {% endif %}
+            </div>
+        </div>
+        {% if not object.isNested %}
+    </div>
+    {% endif %}
+</div>
+<div id="contacts"></div>
