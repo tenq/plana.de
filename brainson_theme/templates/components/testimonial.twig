@@ -1,71 +1,9 @@
-<div x-data="window.gallery()" class="{{ object.get_spacing_top_class_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }} {{ object.containerClasses | join(' ') }} {{ object.get_container_class_string }} relative">
-    <div class="flex justify-center w-full">
-        <div class="relative w-full max-w-lg lg:max-w-md">
-            {% if object.data.carousel %}
-                <div class="relative overflow-x-scroll c-scroll-tiles__container scrollbar-hidden" x-on:scroll="scroll($event)">
-                    <div class="relative flex space-x-8 c-scroll-tiles">
-                        {% for slider in object.data.items %}
-                            <div class="flex-none w-full box-border c-scroll-tiles__image-tile {% if not slider.image %} flex flex-col-reverse {% endif %}">
-                                <div class="flex items-center mb-4 space-x-2 lg:space-x-6 lg:ml-0">
-                                    {% if slider.image %}
-                                        {{get_attachment_image(slider.image, 'square_small', ' md:h-20 md:w-20 h-12 w-12 rounded-full')}}
-                                    {% endif %}
-                                    <div class="{% if not slider.image %} md:ml-10 ml-0 mt-4 {% endif %}">
-                                        <h4 class="font-bold leading-tight sm:text-lg">{{ slider.name }}</h4>
-                                        <span class="text-sm sm:text-base">{{ slider.position }}</span>
-                                    </div>
-                                </div>
-                                <div class="flex space-x-2">
-                                    <div class="flex items-start justify-end flex-none {% if slider.image %} md:w-24 w-12 {% endif %}">
-                                        <svg class="w-8 h-8 text-gray-300">
-                                            <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-quotation"></use>
-                                        </svg>
-                                    </div>
-                                    <span class="min-w-0 text-sm italic sm:text-base">{{ slider.cite }}</span>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div>
-                    <div class="absolute flex items-center justify-center transform -translate-y-1/2 bg-white rounded-none bg-opacity-60 -left-1 lg:-left-12 top-1/2 z-49 hover:text-red-600 focus:text-red-600 c-scroll-tiles__nav__wrapper c-scroll-tiles__nav__wrapper--prev" x-show="!leftEnd" x-transition:enter="transition duration-200 transform ease-out" x-transition:enter-start="scale-75" x-transition:leave="transition duration-100 transform ease-in" x-transition:leave-end="opacity-0 scale-90">
-                        <button class="flex items-center justify-center w-8 h-8 xs:w-11 xs:h-11 c-scroll-tiles__nav c-scroll-tiles__nav--prev" aria-label="Vorheriges Element" @click="prev($event)">
-                            <svg class="pointer-events-none c-icon c-scroll-tiles__nav__icon c-scroll-tiles__nav__icon--left">
-                                <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-chevron-left"></use>
-                            </svg>
-                        </button>
-                    </div>
-
-                    <div class="absolute flex items-center justify-center transform -translate-y-1/2 bg-white rounded-none bg-opacity-60 -right-1 lg:-right-12 top-1/2 z-49 hover:text-red-600 focus:text-red-600 c-scroll-tiles__nav__wrapper c-scroll-tiles__nav__wrapper--next" x-show="!rightEnd" x-transition:enter="transition duration-200 transform ease-out" x-transition:enter-start="scale-75" x-transition:leave="transition duration-100 transform ease-in" x-transition:leave-end="opacity-0 scale-90">
-                        <button class="flex items-center justify-center w-8 h-8 xs:w-11 xs:h-11 c-scroll-tiles__nav c-scroll-tiles__nav--next" aria-label="Nächstes Element" @click="next($event)">
-                            <svg class="pointer-events-none c-icon c-scroll-tiles__nav__icon c-scroll-tiles__nav__icon--right">
-                                <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-chevron-right"></use>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            {% else %}    
-                <div class="flex-none w-full {% if not object.data.image %} flex flex-col-reverse {% endif %}">
-                    <div class="flex items-center mb-4 space-x-2 lg:space-x-6 lg:ml-0">
-                        {% if object.data.image %}
-                            {{get_attachment_image(object.data.image, 'square_small', ' md:h-20 md:w-20 h-12 w-12 rounded-full')}}
-                        {% endif %}
-                        <div class="{% if not object.data.image %} md:ml-10 ml-0 mt-4 {% endif %}">
-                            <h4 class="font-bold leading-tight sm:text-lg">{{ object.data.name }}</h4>
-                            <span class="text-sm sm:text-base">{{ object.data.position }}</span>
-                        </div>
-                    </div>
-                    <div class="flex space-x-2">
-                        <div class="flex items-start justify-end flex-none {% if object.data.image %} md:w-24 w-12 {% endif %}">
-                            <svg class="w-8 h-8 text-gray-300">
-                                <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-quotation"></use>
-                            </svg>
-                        </div>
-                        <span class="min-w-0 text-sm italic sm:text-base">{{ object.data.cite }}</span>
-                    </div>
-                </div>
-            {% endif %}
-        </div>
-    </div>
+<div class="c-testimonial {{ object.get_spacing_top_class_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }} relative">
+    <div class="c-testimonial-text text-lg relative">
+        <svg class="absolute">
+            <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-quote"></use>
+        </svg>
+        {{ object.data.text }}</div>
+    <div class="c-testimonial-name mt-12 text-red uppercase font-medium">{{ object.data.name }}</div>
+    <div class="c-testimonial-position mt-6 uppercase text-red font-medium">{{ object.data.position }}</div>
 </div>

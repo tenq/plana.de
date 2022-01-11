@@ -9,11 +9,11 @@
 
 <div id="{{ object.data.uniqueid }}" class="c-heading {{ alignment }} {{ object.get_spacing_top_class_string }} {{ object.get_alternate_background_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }}">
     {% if not object.isNested %}
-        <div class="{{ object.get_container_class_string }}">
+        <div class="{{ object.get_container_class_string }} {% if object.data.topline_position == 'bottom' %}flex flex-col-reverse{% endif %}">
     {% endif %}
 
         {% if object.data.topline %}
-        <div class="mb-5 font-medium uppercase c-heading__topline text-red">
+        <div class="c-heading-subtitle {% if object.data.topline_position == 'top' %}mb-5{% else %}mt-5{% endif %} max-w-md mx-auto font-medium uppercase c-heading__topline text-red">
             {{ object.data.topline }}
         </div>
         {% endif %}
@@ -27,7 +27,7 @@
                 {{ object.data.heading }}
             </h2>
         {% elseif object.data.level == 'h3' %}
-            <h3 class="{{ text_align }} mt-0 text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 c-heading__title">
+            <h3 class="{{ text_align }} mt-0 text-xl md:text-2xl font-bold text-gray-900 c-heading__title">
                 {{ object.data.heading }}
             </h3>
         {% elseif object.data.level == 'h4' %}

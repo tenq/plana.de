@@ -1,0 +1,20 @@
+.c-ctabox{
+    &-wrap{
+        transform: skewX(-6deg);
+        padding: 3.75rem 2.75rem 2.75rem 2.75rem;
+        @media (max-width: 768px){
+            transform: none;
+            padding: 2rem 1rem;
+        }
+    }
+    &-content{
+        transform: skewX(6deg);
+        @media (max-width: 768px){
+            transform: none;
+        }
+        &-text{
+            max-width: 38.625rem;
+            margin-bottom: 3rem;
+        }
+    }
+}

@@ -126,16 +126,16 @@ trait GlobalFieldsTrait
                 return 'mt-0';
                 break;
             case 'medium':
-                return 'mt-6';
+                return 'mt-16';
                 break;
             case 'small':
-                return 'mt-3';
+                return 'mt-7';
                 break;
             case 'large':
-                return 'mt-12 lg:mt-16';
+                return 'mt-12 lg:mt-32';
                 break;
             case 'xlarge':
-                return 'mt-16 md:mt-24';
+                return 'mt-16 md:mt-32';
                 break;
             default:
                 return 'mt-6';

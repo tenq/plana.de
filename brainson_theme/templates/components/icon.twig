@@ -1,0 +1,13 @@
+{% if object.data.alignment == 'left' %}
+    {% set alignment = 'mr-auto' %}
+{% elseif object.data.alignment == 'right' %}
+    {% set alignment = 'ml-auto' %}
+{% elseif object.data.alignment == 'center' %}
+    {% set alignment = 'mx-auto' %}
+{% endif %}
+
+<div id="{{ object.data.uniqueid }}" class="c-icon-component bg-red rounded-full w-16 h-16 flex items-center justify-center p-3 {{ object.get_spacing_top_class_string }} {{ alignment }}">
+    <svg>
+        <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-{{ object.data.icon }}"></use>
+    </svg>
+</div>
