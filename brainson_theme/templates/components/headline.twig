@@ -13,7 +13,7 @@
     {% endif %}
 
         {% if object.data.topline %}
-        <div class="c-heading-subtitle {% if object.data.topline_position == 'top' %}mb-5{% else %}mt-5{% endif %} max-w-md mx-auto font-medium uppercase c-heading__topline text-red">
+        <div class="c-heading-subtitle {% if object.data.topline_position == 'top' %}mb-5{% else %}mt-5{% endif %} font-medium uppercase c-heading__topline text-red">
             {{ object.data.topline }}
         </div>
         {% endif %}
