@@ -13,7 +13,7 @@
     {% endif %}
 
         {% if object.data.topline %}
-        <div class="c-heading-subtitle {% if object.data.topline_position == 'top' %}mb-5{% else %}mt-5{% endif %} font-medium uppercase c-heading__topline text-red">
+        <div class="mb-5 font-medium uppercase c-heading__topline text-red {% if object.data.alignment == 'center' %}max-w-xl mx-auto{% endif %}">
             {{ object.data.topline }}
         </div>
         {% endif %}
@@ -35,6 +35,11 @@
                 {{ object.data.heading }}
             </h4>
         {% endif %}
+            {% if object.data.bottomline %}
+                <div class="mt-5 font-medium uppercase c-heading__bottomline text-red {% if object.data.alignment == 'center' %}max-w-xl mx-auto{% endif %}">
+                    {{ object.data.bottomline }}
+                </div>
+            {% endif %}
 
     {% if not object.isNested %}
     {# close container #}

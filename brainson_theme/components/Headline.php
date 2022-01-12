@@ -60,23 +60,6 @@ class Headline extends ContentComponentAbstract
                         'return_format' => 'value',
                     ),
                     array(
-                        'key' => 'field_5f89aa1412345',
-                        'label' => 'Topline position',
-                        'name' => 'topline_position',
-                        'type' => 'button_group',
-                        'choices' => array(
-                            'top' => 'Top',
-                            'bottom' => 'Boden',
-                        ),
-                        'wrapper' => array(
-                            'width' => '50',
-                        ),
-                        'allow_null' => 0,
-                        'default_value' => 'h2',
-                        'layout' => 'horizontal',
-                        'return_format' => 'value',
-                    ),
-                    array(
                         'key' => 'field_5ece4797eaf5e',
                         'label' => 'Horizontale Ausrichtung',
                         'name' => 'alignment',
@@ -114,6 +97,17 @@ class Headline extends ContentComponentAbstract
                             'width' => '',
                         ),
                         'required' => 1,
+                        'conditional_logic' => 0,
+                    ),
+                    array(
+                        'key' => 'field_zes75lfibb9ba',
+                        'label' => 'Bottomline',
+                        'name' => 'bottomline',
+                        'type' => 'text',
+                        'wrapper' => array(
+                            'width' => '',
+                        ),
+                        'required' => 0,
                         'conditional_logic' => 0,
                     ),
                 ],
