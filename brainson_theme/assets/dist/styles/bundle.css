@@ -1174,6 +1174,12 @@ video {
 .w-36 {
 	width: 9rem;
 }
+.w-10 {
+	width: 2.5rem;
+}
+.w-12 {
+	width: 3rem;
+}
 .min-w-full {
 	min-width: 100%;
 }
@@ -3625,6 +3631,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	}
 	.lg\:w-1\/5 {
 		width: 20%;
+	}
+	.lg\:w-28 {
+		width: 7rem;
 	}
 	.lg\:px-12 {
 		padding-left: 3rem;

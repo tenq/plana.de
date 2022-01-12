@@ -78,6 +78,15 @@ class Video extends ContentComponentAbstract
                         ),
                     ),
                     array(
+                        'key' => 'field_gbwdltnmprfdv',
+                        'label' => 'Startbild',
+                        'name' => 'poster',
+                        "type" => "image",
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                    ),
+                    array(
                         'key' => 'field_5fb51ee324c1b',
                         'label' => 'Titel',
                         'name' => 'title',

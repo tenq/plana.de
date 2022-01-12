@@ -1,22 +1,30 @@
-<div id="{{ object.data.uniqueid }}" class="c-video {{ object.get_spacing_top_class_string }} {{ object.get_alternate_background_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }}">
+<div id="{{ object.data.uniqueid }}"
+     class="c-video {{ object.get_spacing_top_class_string }} {{ object.get_alternate_background_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }}">
     {% if not object.isNested %}
-        <div class="{{ object.get_container_class_string }}">
-    {% endif %}
-
-    <div class="shadow-lg">
-        <div class="relative aspect-w-16 aspect-h-9">
-            {{ object.getEmbedHTML | youtubeEmbedOptions }}
-        </div>
-
-        {% if object.data.title is not empty or object.data.description is not empty %}
-        <div class="px-4 py-4 bg-white lg:px-6">
-            <h3 class="mt-0 text-xl font-bold">{{ object.data.title }}</h3>
-            <p class="mt-2 leading-relaxed">{{ object.data.description}}</p>
-        </div>
+    <div class="{{ object.get_container_class_string }}">
         {% endif %}
-    </div>
 
-    {% if not object.isNested %}
+        <div class="">
+            <div class="relative aspect-w-16 aspect-h-9">
+                {% if object.data.poster %}
+                    <div onclick="this.style.display = 'none';" class="flex cursor-pointer items-center justify-center absolute inset-0 bg-center bg-no-repeat bg-cover z-10" style="background-image: url('{{ object.data.poster.url }}');">
+                        <svg class="w-12 lg:w-28">
+                            <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-play"></use>
+                        </svg>
+                    </div>
+                {% endif %}
+                {{ object.getEmbedHTML | youtubeEmbedOptions }}
+            </div>
+
+            {% if object.data.title is not empty or object.data.description is not empty %}
+                <div class="pt-6">
+                    <h3 class="mt-0 text-xl lg:text-2xl font-bold">{{ object.data.title }}</h3>
+                    <p class="mt-2 leading-relaxed">{{ object.data.description }}</p>
+                </div>
+            {% endif %}
         </div>
+
+        {% if not object.isNested %}
+    </div>
     {% endif %}
 </div>
