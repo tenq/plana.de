@@ -1,6 +1,6 @@
 <{{ type ? 'a' : 'button'}} 
     {{ href ? 'href="' ~ href ~ '"' : ''}}
-    class="c-button bg-red transition duration-100 ease-in group transform font-ui active:translate-y-0.5 border-white bg-clip-padding text-base"
+    class="{{ class ? class  : '' }} c-button bg-red transition duration-100 ease-in group transform font-ui active:translate-y-0.5 border-white bg-clip-padding text-base"
     {{target ? 'target="' ~ target ~ '" rel="noopener"' : ''}}
     {{ download ? ' download="' ~ download ~ '"' : '' }}
 >

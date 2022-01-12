@@ -7,15 +7,16 @@
 {% endif %}
 
 
-<div id="{{ object.data.uniqueid }}" class="c-heading {{ alignment }} {{ object.get_spacing_top_class_string }} {{ object.get_alternate_background_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }}">
+<div id="{{ object.data.uniqueid }}"
+     class="c-heading {{ alignment }} {{ object.get_spacing_top_class_string }} {{ object.get_alternate_background_string }} {{ object.get_padding_top_class_string }} {{ object.get_padding_bottom_class_string }}">
     {% if not object.isNested %}
-        <div class="{{ object.get_container_class_string }} {% if object.data.topline_position == 'bottom' %}flex flex-col-reverse{% endif %}">
-    {% endif %}
+    <div class="{{ object.get_container_class_string }} {% if object.data.topline_position == 'bottom' %}flex flex-col-reverse{% endif %}">
+        {% endif %}
 
         {% if object.data.topline %}
-        <div class="mb-5 font-medium uppercase c-heading__topline text-red {% if object.data.alignment == 'center' %}max-w-xl mx-auto{% endif %}">
-            {{ object.data.topline }}
-        </div>
+            <div class="mb-5 font-medium uppercase c-heading__topline text-red {% if object.data.alignment == 'center' %}max-w-xl mx-auto{% endif %}">
+                {{ object.data.topline }}
+            </div>
         {% endif %}
 
         {% if object.data.level == 'h1' %}
@@ -35,14 +36,14 @@
                 {{ object.data.heading }}
             </h4>
         {% endif %}
-            {% if object.data.bottomline %}
-                <div class="mt-5 font-medium uppercase c-heading__bottomline text-red {% if object.data.alignment == 'center' %}max-w-xl mx-auto{% endif %}">
-                    {{ object.data.bottomline }}
-                </div>
-            {% endif %}
+        {% if object.data.bottomline %}
+            <div class="mt-5 font-medium uppercase c-heading__bottomline text-red {% if object.data.alignment == 'center' %}max-w-xl mx-auto{% endif %}">
+                {{ object.data.bottomline }}
+            </div>
+        {% endif %}
 
-    {% if not object.isNested %}
-    {# close container #}
+        {% if not object.isNested %}
+        {# close container #}
     </div>
     {% endif %}
 

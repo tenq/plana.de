@@ -1,0 +1,23 @@
+<div id="{{ object.data.uniqueid }}" class="{{ object.get_spacing_top_class_string }} bg-gray-100 aspect-w-16 aspect-h-14 xl:aspect-h-11 relative">
+    <div class="absolute p-6 xl:p-16 flex flex-col justify-between">
+        {% if object.data.topline %}
+            <div class="mb-6 font-medium uppercase c-heading__topline text-red text-xs xl:text-sm max-w-sm">
+                {{ object.data.topline }}
+            </div>
+        {% endif %}
+        {% if object.data.title %}
+            <h2 class="mt-0 text-2xl font-bold xl:text-4xl max-w-sm mb-auto">
+                {{ object.data.title }}
+            </h2>
+        {% endif %}
+        {% if object.data.link %}
+                {% include 'templates/partials/button.twig' with {
+                    type: 'a',
+                    href: object.data.link.url,
+                    target: object.data.link.target,
+                    text: object.data.link.title,
+                    class: 'mr-auto',
+                } %}
+        {% endif %}
+    </div>
+</div>
