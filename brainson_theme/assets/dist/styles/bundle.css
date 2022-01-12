@@ -675,17 +675,8 @@ video {
 .aspect-h-2 {
 	--tw-aspect-h: 2;
 }
-.aspect-h-9 {
-	--tw-aspect-h: 9;
-}
-.aspect-h-10 {
-	--tw-aspect-h: 10;
-}
 .aspect-h-11 {
 	--tw-aspect-h: 11;
-}
-.aspect-h-12 {
-	--tw-aspect-h: 12;
 }
 .aspect-h-14 {
 	--tw-aspect-h: 14;
@@ -971,6 +962,9 @@ video {
 .z-30 {
 	z-index: 30;
 }
+.z-20 {
+	z-index: 20;
+}
 .my-20 {
 	margin-top: 5rem;
 	margin-bottom: 5rem;
@@ -1069,6 +1063,9 @@ video {
 .mt-2\.5 {
 	margin-top: 0.625rem;
 }
+.mb-auto {
+	margin-bottom: auto;
+}
 .mt-auto {
 	margin-top: auto;
 }
@@ -1095,9 +1092,6 @@ video {
 }
 .ml-2 {
 	margin-left: 0.5rem;
-}
-.mb-auto {
-	margin-bottom: auto;
 }
 .block {
 	display: block;
@@ -1186,23 +1180,20 @@ video {
 .w-3 {
 	width: 0.75rem;
 }
-.w-36 {
-	width: 9rem;
-}
-.w-10 {
-	width: 2.5rem;
-}
 .w-12 {
 	width: 3rem;
+}
+.w-36 {
+	width: 9rem;
 }
 .min-w-full {
 	min-width: 100%;
 }
-.max-w-none {
-	max-width: none;
-}
 .max-w-xl {
 	max-width: 36rem;
+}
+.max-w-none {
+	max-width: none;
 }
 .max-w-md {
 	max-width: 28rem;
@@ -1218,9 +1209,6 @@ video {
 }
 .max-w-full {
 	max-width: 100%;
-}
-.max-w-lg {
-	max-width: 32rem;
 }
 .flex-1 {
 	flex: 1 1 0%;
@@ -1272,11 +1260,11 @@ video {
 .transform {
 	transform: var(--tw-transform);
 }
-.cursor-not-allowed {
-	cursor: not-allowed;
-}
 .cursor-pointer {
 	cursor: pointer;
+}
+.cursor-not-allowed {
+	cursor: not-allowed;
 }
 .flex-row {
 	flex-direction: row;
@@ -1482,9 +1470,6 @@ video {
 .p-4 {
 	padding: 1rem;
 }
-.p-16 {
-	padding: 4rem;
-}
 .px-4 {
 	padding-left: 1rem;
 	padding-right: 1rem;
@@ -1518,6 +1503,9 @@ video {
 .pb-4 {
 	padding-bottom: 1rem;
 }
+.pt-6 {
+	padding-top: 1.5rem;
+}
 .pt-16 {
 	padding-top: 4rem;
 }
@@ -1526,9 +1514,6 @@ video {
 }
 .pt-0 {
 	padding-top: 0;
-}
-.pt-6 {
-	padding-top: 1.5rem;
 }
 .pb-16 {
 	padding-bottom: 4rem;
@@ -3657,9 +3642,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	.lg\:w-28 {
 		width: 7rem;
 	}
-	.lg\:p-16 {
-		padding: 4rem;
-	}
 	.lg\:px-12 {
 		padding-left: 3rem;
 		padding-right: 3rem;
@@ -3703,14 +3685,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	}
 }
 @media (min-width: 80em) {
-	.xl\:aspect-h-10 {
-		--tw-aspect-h: 10;
-	}
 	.xl\:aspect-h-11 {
 		--tw-aspect-h: 11;
-	}
-	.xl\:aspect-h-12 {
-		--tw-aspect-h: 12;
 	}
 	.xl\:m-0 {
 		margin: 0;

@@ -7,7 +7,7 @@
         <div class="">
             <div class="relative aspect-w-16 aspect-h-11">
                 {% if object.data.poster %}
-                    <div onclick="this.style.display = 'none';" class="flex cursor-pointer items-center justify-center absolute inset-0 bg-center bg-no-repeat bg-cover z-10" style="background-image: url('{{ object.data.poster.url }}');">
+                    <div onclick="this.style.display = 'none';" class="flex cursor-pointer items-center justify-center absolute inset-0 bg-center bg-no-repeat bg-cover z-20" style="background-image: url('{{ object.data.poster.url }}');">
                         <svg class="w-12 lg:w-28">
                             <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-play"></use>
                         </svg>
