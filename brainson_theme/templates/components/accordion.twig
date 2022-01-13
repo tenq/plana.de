@@ -4,18 +4,18 @@
     {% endif %}
 
     {% for item in object.data.items %}
-        <div class="c-accordion__item {{loop.first ? 'border-t'}}" x-data="{open:  {{ item.initiallyOpened ? 'true' : 'false' }}}">
+        <div class="c-accordion__item" x-data="{open:  {{ item.initiallyOpened ? 'true' : 'false' }}}">
             <button class="c-accordion__item__toggle" @click="open = !open">
-                <span class="flex-grow text-xl font-medium ">{{ item.title }}</span>
+                <span class="flex-grow text-xl font-semibold ">{{ item.title }}</span>
                 <div class="c-accordion__item__toggle__icon">
-                    <svg class="text-white transition-transform transform scale-75 c-icon" :class="{ 'rotate-180': open }">
-                        <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-chevron-down"></use>
+                    <svg class="text-white transition-transform transform scale-75 c-icon" :class="{ 'rotate-90': open }">
+                        <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-arrow-red"></use>
                     </svg>
                 </div>
             </button>
 
             <div x-ref="container" class="c-accordion__container c-accordion__container--closed" :style="open ? 'max-height: ' + $refs.container.scrollHeight + 'px' : ''">
-                <div class="pt-3 c-text">{{ item.content }}</div>
+                <div class="pt-7 c-text">{{ item.content }}</div>
             </div>
 
         </div>

@@ -783,8 +783,8 @@ video {
 	border-style: solid;
 	--tw-border-opacity: 1;
 	border-color: rgba(229, 231, 235, var(--tw-border-opacity));
-	padding-top: 0.75rem;
-	padding-bottom: 0.75rem;
+	padding-top: 1.75rem;
+	padding-bottom: 1.75rem;
 }
 .c-accordion__item__toggle {
 	display: flex;
@@ -802,10 +802,12 @@ video {
 	transition-duration: 100ms;
 }
 .c-accordion__item__toggle:hover {
-	color: var(--prime);
+	--tw-text-opacity: 1;
+	color: rgba(202, 8, 19, var(--tw-text-opacity));
 }
 .c-accordion__item__toggle:focus {
-	color: var(--prime);
+	--tw-text-opacity: 1;
+	color: rgba(202, 8, 19, var(--tw-text-opacity));
 }
 .c-accordion__container {
 	overflow: hidden;
@@ -823,14 +825,10 @@ video {
 .c-accordion__item__toggle .c-accordion__item__toggle__icon {
 	margin-left: 0.75rem;
 	display: flex;
-	height: 1.75rem;
-	width: 1.75rem;
+	width: 1.25rem;
 	flex-shrink: 0;
 	align-items: center;
 	justify-content: center;
-	border-radius: 9999px;
-	--tw-bg-opacity: 1;
-	background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
 	text-align: center;
 	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
 	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -838,12 +836,6 @@ video {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 150ms;
 	transition-duration: 100ms;
-}
-.c-accordion__item__toggle:hover .c-accordion__item__toggle__icon {
-	background-color: var(--prime);
-}
-.c-accordion__item__toggle:focus .c-accordion__item__toggle__icon {
-	background-color: var(--prime);
 }
 .c-tiles {
   }
@@ -956,14 +948,14 @@ video {
 .z-49 {
 	z-index: 49;
 }
+.z-20 {
+	z-index: 20;
+}
 .z-50 {
 	z-index: 50;
 }
 .z-30 {
 	z-index: 30;
-}
-.z-20 {
-	z-index: 20;
 }
 .my-20 {
 	margin-top: 5rem;
@@ -1227,6 +1219,10 @@ video {
 }
 .-translate-y-1\/2 {
 	--tw-translate-y: -50%;
+	transform: var(--tw-transform);
+}
+.rotate-90 {
+	--tw-rotate: 90deg;
 	transform: var(--tw-transform);
 }
 .rotate-180 {
@@ -1497,8 +1493,8 @@ video {
 .pt-4 {
 	padding-top: 1rem;
 }
-.pt-3 {
-	padding-top: 0.75rem;
+.pt-7 {
+	padding-top: 1.75rem;
 }
 .pb-4 {
 	padding-bottom: 1rem;

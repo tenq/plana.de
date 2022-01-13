@@ -1,12 +1,11 @@
 @layer components {
     .c-accordion__item {
-      @apply py-3 border-b border-solid border-gray-200;
+      @apply py-7 border-b border-solid border-gray-200;
     }
   
     .c-accordion__item__toggle {
-      @apply flex w-full text-left cursor-pointer items-center transition duration-100 text-black hover:text-prime focus:text-prime;
+      @apply flex w-full text-left cursor-pointer items-center transition duration-100 text-black hover:text-red focus:text-red;
     }
-  
     .c-accordion__container {
       @apply transition-all text-lg text-gray-600 overflow-hidden;
     }
@@ -14,17 +13,9 @@
     .c-accordion__container--closed{
       @apply max-h-0;
     }
-  
+
     .c-accordion__item__toggle .c-accordion__item__toggle__icon {
-      @apply bg-gray-900 h-7 w-7 rounded-full text-center flex-shrink-0 ml-3 flex items-center justify-center transition duration-100;
-    }
-  
-    .c-accordion__item__toggle:hover .c-accordion__item__toggle__icon {
-      @apply bg-prime;
-    }
-  
-    .c-accordion__item__toggle:focus .c-accordion__item__toggle__icon {
-      @apply bg-prime;
+      @apply w-5 text-center flex-shrink-0 ml-3 flex items-center justify-center transition duration-100;
     }
   }
   
