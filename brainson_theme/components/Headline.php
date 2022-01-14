@@ -101,7 +101,7 @@ class Headline extends ContentComponentAbstract
                     ),
                     array(
                         'key' => 'field_zes75lfibb9ba',
-                        'label' => 'Bottomline',
+                        'label' => 'Subline',
                         'name' => 'bottomline',
                         'type' => 'text',
                         'wrapper' => array(

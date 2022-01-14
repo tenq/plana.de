@@ -9,7 +9,7 @@ class CC2Header extends ContentComponentAbstract
 {
     use GlobalFieldsTrait;
 
-    public static $isNestable = true;
+    public static $isNestable = false;
 
     public static function getComponentName(): string
     {

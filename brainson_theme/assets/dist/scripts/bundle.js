@@ -57,7 +57,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
   \*********************************************/
 /***/ (() => {
 
-eval("const links = document.querySelectorAll(\".smooth-scroll\");\n\nfor (const link of links) {\n    link.addEventListener(\"click\", clickHandler);\n}\n\nfunction clickHandler(e) {\n    e.preventDefault();\n    const href = this.getAttribute(\"href\");\n    const offsetTop = document.querySelector(href).offsetTop;\n\n    scroll({\n        top: offsetTop,\n        behavior: \"smooth\"\n    });\n}\n\n//# sourceURL=webpack://brainson_theme/./assets/src/scripts/smooth-scroll.js?");
+eval("// const links = document.querySelectorAll(\".smooth-scroll\");\n//\n// for (const link of links) {\n//     link.addEventListener(\"click\", clickHandler);\n// }\n//\n// function clickHandler(e) {\n//     e.preventDefault();\n//     const href = this.getAttribute(\"href\");\n//     const offsetTop = document.querySelector(href).offsetTop;\n//\n//     scroll({\n//         top: offsetTop,\n//         behavior: \"smooth\"\n//     });\n// }\n\n//# sourceURL=webpack://brainson_theme/./assets/src/scripts/smooth-scroll.js?");
 
 /***/ }),
 

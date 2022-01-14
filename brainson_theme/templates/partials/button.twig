@@ -1,8 +1,13 @@
-<{{ type ? 'a' : 'button'}} 
-    {{ href ? 'href="' ~ href ~ '"' : ''}}
-    class="{{ class ? class  : '' }} c-button bg-red transition duration-100 ease-in group transform font-ui active:translate-y-0.5 border-white bg-clip-padding text-base"
-    {{target ? 'target="' ~ target ~ '" rel="noopener"' : ''}}
+<{{ type ? 'a' : 'button' }}
+    {{ href ? 'href="' ~ href ~ '"' : '' }}
+class="{{ class ? class  : '' }} {% if style == 'primary' %} c-button bg-red transition duration-100 ease-in group transform font-ui active:translate-y-0.5 border-white bg-clip-padding text-base{% elseif style == 'link' %} text-red font-bold text-base{% else %}c-button bg-red transition duration-100 ease-in group transform font-ui active:translate-y-0.5 border-white bg-clip-padding text-base{% endif %}"
+{{ target ? 'target="' ~ target ~ '" rel="noopener"' : '' }}
     {{ download ? ' download="' ~ download ~ '"' : '' }}
 >
-    {{text}}
-</{{ type ?'a':'button'}}>
+{{ text }}
+{% if style == 'link' %}
+    <svg class="w-3 h-3 ml-2.5">
+        <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-arrow-red"></use>
+    </svg>
+{% endif %}
+</{{ type ?'a':'button' }}>

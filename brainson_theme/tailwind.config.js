@@ -48,7 +48,9 @@ module.exports = {
                     '800': '#355a75', 
                     '900': '#2c4a60',
                 },
-                'red': '#CA0813'
+                'red': '#CA0813',
+                'grey': '#464646',
+                'darkgrey': '#282828'
             },
             spacing: {
                 px: '1px',
