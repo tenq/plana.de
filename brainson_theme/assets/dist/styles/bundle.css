@@ -705,15 +705,20 @@ video {
 	transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 .c-button:hover, .dsgvo_toolkit_accept_button:hover {
+	--tw-border-opacity: 1;
+	border-color: rgba(202, 8, 19, var(--tw-border-opacity));
 	--tw-bg-opacity: 1;
-	background-color: rgba(202, 8, 19, var(--tw-bg-opacity));
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 	--tw-text-opacity: 1;
-	color: rgba(255, 255, 255, var(--tw-text-opacity));
+	color: rgba(202, 8, 19, var(--tw-text-opacity));
 }
 .c-button:focus, .dsgvo_toolkit_accept_button:focus {
-	background-color: var(--prime-off);
+	--tw-border-opacity: 1;
+	border-color: rgba(202, 8, 19, var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 	--tw-text-opacity: 1;
-	color: rgba(255, 255, 255, var(--tw-text-opacity));
+	color: rgba(202, 8, 19, var(--tw-text-opacity));
 }
 .c-button:active, .dsgvo_toolkit_accept_button:active {
             transform: translateY(2px);
@@ -726,7 +731,8 @@ video {
 
         }
 .c-button[disabled]:hover, .c-button[disabled]:focus, [disabled] .c-button:hover, [disabled] .c-button:focus, .dsgvo_toolkit_accept_button[disabled]:hover, .dsgvo_toolkit_accept_button[disabled]:focus, [disabled] .dsgvo_toolkit_accept_button:hover, [disabled] .dsgvo_toolkit_accept_button:focus {
-	background-color: var(--prime-off);
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 }
 .c-button[disabled]:active, [disabled] .c-button:active, .dsgvo_toolkit_accept_button[disabled]:active, [disabled] .dsgvo_toolkit_accept_button:active {
                 transform: translateY(2px);
@@ -3140,18 +3146,17 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
             right: 1rem!important
     }
         }
-.сс2-header::before {
-        content: '';
-        background: linear-gradient(84.15deg, rgba(0, 0, 0, 0.35) 24.08%, rgba(0, 0, 0, 0) 65.38%);
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-    }
 .сс2-header-top-logo {
             padding: 2.188rem 2.938rem;
         }
+@media (max-width: 500px){
+.сс2-header-top-logo {
+                padding: 1rem 1.5rem
+        }
+                .сс2-header-top-logo img{
+                    max-width: 100px;
+                }
+            }
 .сс2-header-top-phone {
             border-radius: 3.125rem;
             padding: 0.75rem 1.625rem 0.875rem 2.125rem;
@@ -3377,6 +3382,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	--tw-bg-opacity: 1;
 	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
 }
+.hover\:bg-red:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(202, 8, 19, var(--tw-bg-opacity));
+}
 .hover\:bg-white:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
@@ -3393,6 +3402,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	--tw-text-opacity: 1;
 	color: rgba(202, 8, 19, var(--tw-text-opacity));
 }
+.hover\:text-white:hover {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
 .hover\:text-black:hover {
 	--tw-text-opacity: 1;
 	color: rgba(0, 0, 0, var(--tw-text-opacity));
@@ -3403,6 +3416,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .hover\:shadow-box:hover {
 	--tw-shadow: 2px 4px 11px rgba(0, 0, 0, 0.12);
 	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.hover\:drop-shadow-2xl:hover {
+	--tw-drop-shadow: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+	filter: var(--tw-filter);
 }
 .focus\:scale-125:focus {
 	--tw-scale-x: 1.25;
@@ -3417,6 +3434,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .focus\:border-transparent:focus {
 	border-color: transparent;
 }
+.focus\:bg-red:focus {
+	--tw-bg-opacity: 1;
+	background-color: rgba(202, 8, 19, var(--tw-bg-opacity));
+}
 .focus\:bg-gray-200:focus {
 	--tw-bg-opacity: 1;
 	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
@@ -3424,6 +3445,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .focus\:bg-blue-500:focus {
 	--tw-bg-opacity: 1;
 	background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+}
+.focus\:text-white:focus {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.focus\:text-red:focus {
+	--tw-text-opacity: 1;
+	color: rgba(202, 8, 19, var(--tw-text-opacity));
 }
 .focus\:text-black:focus {
 	--tw-text-opacity: 1;

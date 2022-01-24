@@ -1,5 +1,5 @@
 <div id="{{ object.data.uniqueid }}" class="сс2-header bg-no-repeat bg-center bg-cover text-white text-base"
-     style="background-image: url('{{ object.data.items.bg.url }}');">
+     style="background-image:linear-gradient(84.15deg, rgba(0, 0, 0, 0.35) 24.08%, rgba(0, 0, 0, 0) 65.38%), url('{{ object.data.items.bg.url }}');">
     {% if not object.isNested %}
     <div class="{{ object.get_container_class_string }} relative min-h-screen flex flex-col justify-between">
         {% endif %}
@@ -7,11 +7,11 @@
             <a
                     href="{{ function('get_home_url') }}"
                     title=""
-                    class="сс2-header-top-logo bg-white inline-flex">
+                    class="сс2-header-top-logo bg-white inline-flex flex-col">
                 <img src="{{ object.data.header.logo.url }}" alt="{{ object.data.header.logo.alt }}" width="127">
             </a>
             {% if object.data.header.phone %}
-                <div class="сс2-header-top-phone bg-white  items-center inline-flex mt-6 sm:mt-0 whitespace-nowrap">
+                <div class="сс2-header-top-phone bg-white  items-center inline-flex mt-6 sm:mt-0 whitespace-nowrap transition hover:scale-110 focus:scale-110">
                     <svg class="c-icon">
                         <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-phone"></use>
                     </svg>
@@ -21,7 +21,7 @@
                         {% if object.data.header.anchor %}
                             <span class="сс2-header-top-phone-sep block w-px bg-black"></span>
                             <a href="#{{ object.data.header.anchor }}"
-                               class="сс2-header-top-phone-title smooth-scroll font-bold text-red">{{ object.data.header.anchor_title }}</a>
+                               class="сс2-header-top-phone-title smooth-scroll transition font-bold text-red hover:drop-shadow-2xl">{{ object.data.header.anchor_title }}</a>
                         {% endif %}
                     {% endif %}
                 </div>
@@ -37,13 +37,13 @@
                     {% if object.data.items.btns.btn1_title %}
                         {% if object.data.items.btns.btn1_anchor %}
                             <a href="#{{ object.data.items.btns.btn1_anchor }}"
-                               class="сс2-header-content-btns-btn1 smooth-scroll bg-white text-red font-bold mr-12 inline-flex mb-3 sm:mb-0">{{ object.data.items.btns.btn1_title }}</a>
+                               class="сс2-header-content-btns-btn1 smooth-scroll bg-white text-red font-bold mr-12 inline-flex mb-3 transition sm:mb-0 hover:text-white hover:bg-red focus:text-white focus:bg-red">{{ object.data.items.btns.btn1_title }}</a>
                         {% endif %}
                     {% endif %}
                     {% if object.data.items.btns.btn2_title %}
                         {% if object.data.items.btns.btn2_anchor %}
                             <a href="#{{ object.data.items.btns.btn2_anchor }}"
-                               class="сс2-header-content-btns-btn2 smooth-scroll inline-flex font-bold items-center whitespace-nowrap ml-6 sm:ml-0">{{ object.data.items.btns.btn2_title }}
+                               class="сс2-header-content-btns-btn2 smooth-scroll inline-flex font-bold items-center whitespace-nowrap transition ml-6 sm:ml-0 hover:text-red focus:text-red">{{ object.data.items.btns.btn2_title }}
                                 <svg class="c-icon ml-3">
                                     <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-play"></use>
                                 </svg>

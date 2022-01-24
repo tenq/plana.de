@@ -3,7 +3,7 @@
 
     .c-button,
     .dsgvo_toolkit_accept_button {
-        @apply text-white text-sm font-bold justify-center bg-prime inline-flex items-center py-3 px-6 transition duration-100 ease-in rounded-none hover:bg-red hover:text-white focus:bg-prime-700 focus:text-white;
+        @apply text-white text-sm font-bold justify-center bg-prime inline-flex items-center py-3 px-6 transition duration-100 ease-in rounded-none hover:bg-white hover:border-red hover:text-red focus:bg-white focus:text-red focus:border-red;
 
         &:active {
             transform: translateY(2px);
@@ -15,8 +15,9 @@
 
             &:hover,
             &:focus {
-                @apply bg-prime-700;
+                @apply bg-white;
             }
+
 
             &:active {
                 transform: translateY(2px);
