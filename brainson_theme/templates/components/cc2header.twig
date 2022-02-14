@@ -3,7 +3,7 @@
     {% if not object.isNested %}
     <div class="{{ object.get_container_class_string }} relative min-h-screen flex flex-col justify-between">
         {% endif %}
-        <div class="сс2-header-top justify-between w-full items-center sm:flex">
+        <div class="сс2-header-top justify-between w-full items-center md:flex">
             <a
                     href="{{ function('get_home_url') }}"
                     title=""
@@ -11,18 +11,18 @@
                 <img src="{{ object.data.header.logo.url }}" alt="{{ object.data.header.logo.alt }}" width="127">
             </a>
             {% if object.data.header.phone %}
-                <div class="сс2-header-top-phone bg-white  items-center inline-flex mt-6 sm:mt-0 whitespace-nowrap transition hover:scale-110 focus:scale-110">
+                <div class="сс2-header-top-phone bg-white  items-center inline-flex mt-6 md:mt-0 whitespace-nowrap transition">
                     <svg class="c-icon">
                         <use xlink:href="{{ function('get_template_directory_uri') }}/assets/dist/svg/sprite.svg#icon-phone"></use>
                     </svg>
                     <a href="tel:{{ object.phone(object.data.header.phone) }}"
                        class="transition text-black hover:text-red">{{ object.data.header.phone }}</a>
-                    {% if object.data.header.anchor_title %}
-                        {% if object.data.header.anchor %}
-                            <span class="сс2-header-top-phone-sep block w-px bg-black"></span>
-                            <a href="#{{ object.data.header.anchor }}"
-                               class="сс2-header-top-phone-title smooth-scroll transition font-bold text-red hover:drop-shadow-2xl">{{ object.data.header.anchor_title }}</a>
+                    {% if object.data.header.name %}
+                        <span class="hidden md:block сс2-header-top-phone-sep block w-px bg-black"></span>
+                        {% if object.data.header.photo %}
+                            <img style="width: 2.188rem;height: 2.188rem" class="hidden sm:block ml-2.5 md:ml-0 rounded-full mr-2.5" src="{{ object.data.header.photo.url }}" alt="{{ object.data.header.photo.alt }}">
                         {% endif %}
+                        <span class="ml-2.5 sm:ml-0 сс2-header-top-phone-title transition font-bold text-red">{{ object.data.header.name }}</span>
                     {% endif %}
                 </div>
             {% endif %}

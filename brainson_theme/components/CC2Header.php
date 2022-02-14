@@ -87,8 +87,8 @@ class CC2Header extends ContentComponentAbstract
                             ],
                             [
                                 'key' => 'field_615d6fb86d98i',
-                                'label' => 'Ankertitel',
-                                'name' => 'anchor_title',
+                                'label' => 'Name',
+                                'name' => 'name',
                                 'type' => 'text',
                                 'instructions' => '',
                                 'required' => 0,
@@ -101,9 +101,9 @@ class CC2Header extends ContentComponentAbstract
                             ],
                             [
                                 'key' => 'field_615d6fb86d97k',
-                                'label' => 'Anker (block id)',
-                                'name' => 'anchor',
-                                'type' => 'text',
+                                'label' => 'Foto',
+                                'name' => 'photo',
+                                'type' => 'image',
                                 'instructions' => '',
                                 'required' => 0,
                                 'conditional_logic' => 0,

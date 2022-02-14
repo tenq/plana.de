@@ -1094,6 +1094,9 @@ video {
 .mr-2 {
 	margin-right: 0.5rem;
 }
+.mr-2\.5 {
+	margin-right: 0.625rem;
+}
 .block {
 	display: block;
 }
@@ -2956,6 +2959,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     height: 1.5rem;
     width: 1.5rem;
 }
+.c-icon-component{
+        width: 4.375rem;
+        height: 4.375rem;
+    }
+.c-icon-component svg{
+            max-width: 1.75rem;
+        }
 .c-text {
 	line-height: 1.625;
 }
@@ -3361,14 +3371,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .tns-t-ct{width:2333.3333333%;width:calc(100% * 70 / 3);position:absolute;right:0}
 .tns-t-ct:after{content:'';display:table;clear:both}
 .tns-t-ct>div{width:1.4285714%;width:calc(100% / 70);height:10px;float:left}
-.hover\:scale-125:hover {
-	--tw-scale-x: 1.25;
-	--tw-scale-y: 1.25;
-	transform: var(--tw-transform);
-}
 .hover\:scale-110:hover {
 	--tw-scale-x: 1.1;
 	--tw-scale-y: 1.1;
+	transform: var(--tw-transform);
+}
+.hover\:scale-125:hover {
+	--tw-scale-x: 1.25;
+	--tw-scale-y: 1.25;
 	transform: var(--tw-transform);
 }
 .hover\:border-transparent:hover {
@@ -3421,14 +3431,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	--tw-drop-shadow: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
 	filter: var(--tw-filter);
 }
-.focus\:scale-125:focus {
-	--tw-scale-x: 1.25;
-	--tw-scale-y: 1.25;
-	transform: var(--tw-transform);
-}
 .focus\:scale-110:focus {
 	--tw-scale-x: 1.1;
 	--tw-scale-y: 1.1;
+	transform: var(--tw-transform);
+}
+.focus\:scale-125:focus {
+	--tw-scale-x: 1.25;
+	--tw-scale-y: 1.25;
 	transform: var(--tw-transform);
 }
 .focus\:border-transparent:focus {
@@ -3535,6 +3545,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	.sm\:ml-0 {
 		margin-left: 0;
 	}
+	.sm\:block {
+		display: block;
+	}
 	.sm\:flex {
 		display: flex;
 	}
@@ -3624,6 +3637,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	}
 	.md\:mb-\[20vh\] {
 		margin-bottom: 20vh;
+	}
+	.md\:ml-0 {
+		margin-left: 0;
+	}
+	.md\:block {
+		display: block;
 	}
 	.md\:flex {
 		display: flex;
